@@ -66,3 +66,584 @@
 2025-05-10 00:47:18,203 - database - INFO - Initializing database at data/customer_stories.db
 2025-05-10 00:47:18,203 - database - INFO - Executing schema script
 2025-05-10 00:47:18,204 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:06:21,762 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:06:21,763 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:06:21,768 - database - INFO - Executing schema script
+2025-05-10 01:06:21,769 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:06:21,772 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:06:21,775 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:06:21,775 - database - INFO - Executing schema script
+2025-05-10 01:06:21,776 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:11:51,723 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:11:51,724 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:11:51,726 - database - INFO - Executing schema script
+2025-05-10 01:11:51,727 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:11:51,732 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:11:51,732 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:11:51,733 - database - INFO - Executing schema script
+2025-05-10 01:11:51,733 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:20:26,408 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:20:26,409 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:20:26,414 - database - INFO - Executing schema script
+2025-05-10 01:20:26,415 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:20:26,417 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:20:26,417 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:20:26,417 - database - INFO - Executing schema script
+2025-05-10 01:20:26,417 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:31:14,606 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:31:14,607 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:31:14,610 - database - INFO - Executing schema script
+2025-05-10 01:31:14,699 - database - INFO - Schema execution completed
+2025-05-10 01:31:14,701 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:31:14,703 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:31:14,707 - database - INFO - Executing schema script
+2025-05-10 01:31:14,708 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:39:10,190 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:39:10,191 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:39:10,195 - database - INFO - Executing schema script
+2025-05-10 01:39:10,197 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:39:10,199 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:39:10,200 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:39:10,200 - database - INFO - Executing schema script
+2025-05-10 01:39:10,200 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:43:11,104 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:43:11,109 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:43:11,112 - database - INFO - Executing schema script
+2025-05-10 01:43:11,139 - database - INFO - Schema execution completed
+2025-05-10 01:43:11,141 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:43:11,141 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:43:11,143 - database - INFO - Executing schema script
+2025-05-10 01:43:11,143 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:43:51,372 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:43:51,378 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:43:51,380 - database - INFO - Executing schema script
+2025-05-10 01:43:51,403 - database - INFO - Schema execution completed
+2025-05-10 01:43:51,404 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:43:51,404 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:43:51,406 - database - INFO - Executing schema script
+2025-05-10 01:43:51,406 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 01:44:07,436 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:44:07,447 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:44:07,450 - database - INFO - Executing schema script
+2025-05-10 01:44:07,478 - database - INFO - Schema execution completed
+2025-05-10 01:44:07,480 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 01:44:07,480 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 01:44:07,483 - database - INFO - Executing schema script
+2025-05-10 01:44:07,483 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:00:49,631 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:00:49,871 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:00:49,926 - database - INFO - Executing schema script
+2025-05-10 02:00:49,938 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:00:49,939 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:00:49,940 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:00:49,940 - database - INFO - Executing schema script
+2025-05-10 02:00:49,940 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:02:48,764 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:02:48,766 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:02:48,769 - database - INFO - Executing schema script
+2025-05-10 02:02:48,771 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:02:48,774 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:02:48,775 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:02:48,775 - database - INFO - Executing schema script
+2025-05-10 02:02:48,776 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:02:49,942 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> processing
+2025-05-10 02:02:49,942 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:03:00,423 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:00,431 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> failed
+2025-05-10 02:03:00,432 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:00,432 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:03:00,437 - database - INFO - Updated file status: data/html/d69240132f0d.html -> processing
+2025-05-10 02:03:00,437 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:03:10,031 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:10,039 - database - INFO - Updated file status: data/html/d69240132f0d.html -> failed
+2025-05-10 02:03:10,039 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:10,039 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:03:10,072 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> processing
+2025-05-10 02:03:10,072 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:03:19,293 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:19,300 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> failed
+2025-05-10 02:03:19,300 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:19,301 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:03:19,304 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> processing
+2025-05-10 02:03:19,305 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:03:27,464 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:27,475 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> failed
+2025-05-10 02:03:27,475 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:27,475 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:03:27,482 - database - INFO - Updated file status: data/html/ef57f0cc206e.html -> processing
+2025-05-10 02:03:27,482 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory
+2025-05-10 02:03:35,430 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:35,438 - database - INFO - Updated file status: data/html/ef57f0cc206e.html -> failed
+2025-05-10 02:03:35,438 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:35,438 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory
+2025-05-10 02:03:35,446 - database - INFO - Updated file status: data/html/fbf837391545.html -> processing
+2025-05-10 02:03:35,447 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:03:45,008 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:45,018 - database - INFO - Updated file status: data/html/fbf837391545.html -> failed
+2025-05-10 02:03:45,018 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:45,018 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:03:45,023 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> processing
+2025-05-10 02:03:45,024 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:03:54,935 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:54,944 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> failed
+2025-05-10 02:03:54,944 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:03:54,944 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:03:54,949 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:03:54,950 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:04:18,927 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:04:18,938 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:04:18,938 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:04:18,938 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:04:18,944 - database - INFO - Updated file status: data/html/b527fe171ad7.html -> processing
+2025-05-10 02:04:18,944 - database - INFO - URL: https://lambda.ai/case-studies/fal
+2025-05-10 02:04:43,215 - database - ERROR - Error adding case study: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:04:43,223 - database - INFO - Updated file status: data/html/b527fe171ad7.html -> failed
+2025-05-10 02:04:43,223 - database - INFO - Error message: Expecting value: line 1 column 1 (char 0)
+2025-05-10 02:04:43,223 - database - INFO - URL: https://lambda.ai/case-studies/fal
+2025-05-10 02:04:43,228 - database - INFO - Updated file status: data/html/6ff565b9c230.html -> processing
+2025-05-10 02:04:43,228 - database - INFO - URL: https://lambda.ai/case-studies/pika
+2025-05-10 02:06:11,485 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:06:11,488 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:06:11,491 - database - INFO - Executing schema script
+2025-05-10 02:06:11,523 - database - INFO - Schema execution completed
+2025-05-10 02:06:11,524 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:06:11,524 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:06:11,527 - database - INFO - Executing schema script
+2025-05-10 02:06:11,528 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:06:44,973 - database - INFO - Updated file status: data/html/935128472516.html -> processing
+2025-05-10 02:06:44,974 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights
+2025-05-10 02:06:52,867 - database - INFO - Updated file status: data/html/935128472516.html -> completed
+2025-05-10 02:06:52,867 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights
+2025-05-10 02:06:52,873 - database - INFO - Updated file status: data/html/13c86f6e68eb.html -> processing
+2025-05-10 02:06:52,873 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/alphasense
+2025-05-10 02:07:01,608 - database - INFO - Updated file status: data/html/13c86f6e68eb.html -> completed
+2025-05-10 02:07:01,609 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/alphasense
+2025-05-10 02:07:01,616 - database - INFO - Updated file status: data/html/5fd4aafaaa17.html -> processing
+2025-05-10 02:07:01,616 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/mayo-clinic
+2025-05-10 02:07:08,718 - database - INFO - Updated file status: data/html/5fd4aafaaa17.html -> completed
+2025-05-10 02:07:08,718 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/mayo-clinic
+2025-05-10 02:07:08,724 - database - INFO - Updated file status: data/html/63891b30b32f.html -> processing
+2025-05-10 02:07:08,724 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/totalenergies
+2025-05-10 02:07:16,624 - database - INFO - Updated file status: data/html/63891b30b32f.html -> completed
+2025-05-10 02:07:16,624 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/totalenergies
+2025-05-10 02:07:16,630 - database - INFO - Updated file status: data/html/163044e5aaf2.html -> processing
+2025-05-10 02:07:16,630 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre
+2025-05-10 02:07:24,050 - database - INFO - Updated file status: data/html/163044e5aaf2.html -> completed
+2025-05-10 02:07:24,051 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre
+2025-05-10 02:07:24,056 - database - INFO - Updated file status: data/html/61ea7282573a.html -> processing
+2025-05-10 02:07:24,057 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/psc
+2025-05-10 02:07:31,582 - database - INFO - Updated file status: data/html/61ea7282573a.html -> completed
+2025-05-10 02:07:31,582 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/psc
+2025-05-10 02:07:31,587 - database - INFO - Updated file status: data/html/b967a8f56071.html -> processing
+2025-05-10 02:07:31,587 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/epcc
+2025-05-10 02:07:39,623 - database - INFO - Updated file status: data/html/b967a8f56071.html -> completed
+2025-05-10 02:07:39,624 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/epcc
+2025-05-10 02:07:39,630 - database - INFO - Updated file status: data/html/0e1fec1af446.html -> processing
+2025-05-10 02:07:39,631 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory
+2025-05-10 02:07:48,645 - database - INFO - Updated file status: data/html/0e1fec1af446.html -> completed
+2025-05-10 02:07:48,645 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory
+2025-05-10 02:07:48,651 - database - INFO - Updated file status: data/html/2d3dc3b2fefb.html -> processing
+2025-05-10 02:07:48,651 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/astrazeneca
+2025-05-10 02:07:56,210 - database - INFO - Updated file status: data/html/2d3dc3b2fefb.html -> completed
+2025-05-10 02:07:56,210 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/astrazeneca
+2025-05-10 02:07:56,215 - database - INFO - Updated file status: data/html/455e941cd788.html -> processing
+2025-05-10 02:07:56,215 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory
+2025-05-10 02:08:04,142 - database - INFO - Updated file status: data/html/455e941cd788.html -> completed
+2025-05-10 02:08:04,142 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory
+2025-05-10 02:08:04,147 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> processing
+2025-05-10 02:08:04,147 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:08:14,674 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> completed
+2025-05-10 02:08:14,675 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:08:14,684 - database - INFO - Updated file status: data/html/d69240132f0d.html -> processing
+2025-05-10 02:08:14,684 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:08:23,382 - database - INFO - Updated file status: data/html/d69240132f0d.html -> completed
+2025-05-10 02:08:23,382 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:08:23,387 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> processing
+2025-05-10 02:08:23,387 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:08:31,176 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> completed
+2025-05-10 02:08:31,177 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:08:31,183 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> processing
+2025-05-10 02:08:31,183 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:08:38,855 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> completed
+2025-05-10 02:08:38,856 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:08:38,860 - database - INFO - Updated file status: data/html/ef57f0cc206e.html -> processing
+2025-05-10 02:08:38,860 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory
+2025-05-10 02:08:46,614 - database - INFO - Updated file status: data/html/ef57f0cc206e.html -> completed
+2025-05-10 02:08:46,615 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory
+2025-05-10 02:08:46,620 - database - INFO - Updated file status: data/html/fbf837391545.html -> processing
+2025-05-10 02:08:46,620 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:08:55,032 - database - INFO - Updated file status: data/html/fbf837391545.html -> completed
+2025-05-10 02:08:55,032 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:08:55,036 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> processing
+2025-05-10 02:08:55,036 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:09:02,513 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> completed
+2025-05-10 02:09:02,514 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:09:02,517 - database - INFO - Updated file status: data/html/22a19c0b2b6c.html -> processing
+2025-05-10 02:09:02,518 - database - INFO - URL: https://lambda.ai/case-studies
+2025-05-10 02:09:08,433 - database - INFO - Updated file status: data/html/22a19c0b2b6c.html -> completed
+2025-05-10 02:09:08,433 - database - INFO - URL: https://lambda.ai/case-studies
+2025-05-10 02:09:08,439 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:09:08,439 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:19:54,225 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:19:54,240 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:19:54,242 - database - INFO - Executing schema script
+2025-05-10 02:19:54,278 - database - INFO - Schema execution completed
+2025-05-10 02:19:54,280 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:19:54,280 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:19:54,282 - database - INFO - Executing schema script
+2025-05-10 02:19:54,282 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:19:56,382 - database - INFO - Updated file status: data/html/935128472516.html -> pending
+2025-05-10 02:19:56,382 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights
+2025-05-10 02:19:57,922 - database - INFO - Updated file status: data/html/13c86f6e68eb.html -> pending
+2025-05-10 02:19:57,922 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/alphasense
+2025-05-10 02:19:57,937 - database - INFO - Added case study with ID: 1
+2025-05-10 02:19:59,514 - database - INFO - Updated file status: data/html/5fd4aafaaa17.html -> pending
+2025-05-10 02:19:59,514 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/mayo-clinic
+2025-05-10 02:19:59,536 - database - INFO - Added case study with ID: 2
+2025-05-10 02:20:01,056 - database - INFO - Updated file status: data/html/63891b30b32f.html -> pending
+2025-05-10 02:20:01,057 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/totalenergies
+2025-05-10 02:20:01,075 - database - INFO - Added case study with ID: 3
+2025-05-10 02:20:02,352 - database - INFO - Updated file status: data/html/163044e5aaf2.html -> pending
+2025-05-10 02:20:02,352 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre
+2025-05-10 02:20:02,367 - database - INFO - Added case study with ID: 4
+2025-05-10 02:20:03,865 - database - INFO - Updated file status: data/html/61ea7282573a.html -> pending
+2025-05-10 02:20:03,865 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/psc
+2025-05-10 02:20:03,880 - database - INFO - Added case study with ID: 5
+2025-05-10 02:20:05,557 - database - INFO - Updated file status: data/html/b967a8f56071.html -> pending
+2025-05-10 02:20:05,557 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/epcc
+2025-05-10 02:20:05,573 - database - INFO - Added case study with ID: 6
+2025-05-10 02:20:06,942 - database - INFO - Updated file status: data/html/0e1fec1af446.html -> pending
+2025-05-10 02:20:06,943 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory
+2025-05-10 02:20:06,956 - database - INFO - Added case study with ID: 7
+2025-05-10 02:20:08,359 - database - INFO - Updated file status: data/html/2d3dc3b2fefb.html -> pending
+2025-05-10 02:20:08,359 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/astrazeneca
+2025-05-10 02:20:08,374 - database - INFO - Added case study with ID: 8
+2025-05-10 02:20:09,909 - database - INFO - Updated file status: data/html/455e941cd788.html -> pending
+2025-05-10 02:20:09,909 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory
+2025-05-10 02:20:09,947 - database - INFO - Added case study with ID: 9
+2025-05-10 02:20:11,412 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> pending
+2025-05-10 02:20:11,412 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:20:11,442 - database - INFO - Added case study with ID: 10
+2025-05-10 02:20:13,039 - database - INFO - Updated file status: data/html/d69240132f0d.html -> pending
+2025-05-10 02:20:13,039 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:20:13,051 - database - INFO - Added case study with ID: 11
+2025-05-10 02:20:14,319 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> pending
+2025-05-10 02:20:14,319 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:20:14,336 - database - INFO - Added case study with ID: 12
+2025-05-10 02:20:15,820 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> pending
+2025-05-10 02:20:15,820 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:20:15,832 - database - INFO - Added case study with ID: 13
+2025-05-10 02:20:17,270 - database - INFO - Updated file status: data/html/ef57f0cc206e.html -> pending
+2025-05-10 02:20:17,271 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory
+2025-05-10 02:20:17,289 - database - INFO - Added case study with ID: 14
+2025-05-10 02:20:18,654 - database - INFO - Updated file status: data/html/fbf837391545.html -> pending
+2025-05-10 02:20:18,655 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:20:18,671 - database - INFO - Added case study with ID: 15
+2025-05-10 02:20:19,931 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> pending
+2025-05-10 02:20:19,931 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:20:21,166 - database - INFO - Updated file status: data/html/22a19c0b2b6c.html -> pending
+2025-05-10 02:20:21,167 - database - INFO - URL: https://lambda.ai/case-studies
+2025-05-10 02:20:22,271 - database - INFO - Updated file status: data/html/885c8929529f.html -> pending
+2025-05-10 02:20:22,271 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:20:22,339 - database - INFO - Added case study with ID: 16
+2025-05-10 02:20:23,400 - database - INFO - Updated file status: data/html/b527fe171ad7.html -> pending
+2025-05-10 02:20:23,401 - database - INFO - URL: https://lambda.ai/case-studies/fal
+2025-05-10 02:20:23,452 - database - INFO - Added case study with ID: 17
+2025-05-10 02:20:24,519 - database - INFO - Updated file status: data/html/6ff565b9c230.html -> pending
+2025-05-10 02:20:24,520 - database - INFO - URL: https://lambda.ai/case-studies/pika
+2025-05-10 02:20:24,586 - database - INFO - Added case study with ID: 18
+2025-05-10 02:20:25,642 - database - INFO - Updated file status: data/html/a99f90e02627.html -> pending
+2025-05-10 02:20:25,642 - database - INFO - URL: https://lambda.ai/case-studies/genesis-therapeutics
+2025-05-10 02:20:25,689 - database - INFO - Added case study with ID: 19
+2025-05-10 02:20:26,761 - database - INFO - Updated file status: data/html/1b83c9af88e7.html -> pending
+2025-05-10 02:20:26,761 - database - INFO - URL: https://lambda.ai/case-studies/iambic-therapeutics
+2025-05-10 02:20:26,802 - database - INFO - Added case study with ID: 20
+2025-05-10 02:21:01,129 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:21:01,142 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:21:01,144 - database - INFO - Executing schema script
+2025-05-10 02:21:01,145 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:21:01,147 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:21:01,147 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:21:01,147 - database - INFO - Executing schema script
+2025-05-10 02:21:01,147 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:21:02,623 - database - INFO - Updated file status: data/html/935128472516.html -> pending
+2025-05-10 02:21:02,623 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights
+2025-05-10 02:21:03,960 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> pending
+2025-05-10 02:21:03,961 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:21:05,129 - database - INFO - Updated file status: data/html/22a19c0b2b6c.html -> pending
+2025-05-10 02:21:05,129 - database - INFO - URL: https://lambda.ai/case-studies
+2025-05-10 02:21:15,602 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/alphasense
+2025-05-10 02:21:26,865 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/mayo-clinic
+2025-05-10 02:21:37,311 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/totalenergies
+2025-05-10 02:21:49,064 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre
+2025-05-10 02:21:58,868 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/psc
+2025-05-10 02:22:10,212 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/epcc
+2025-05-10 02:22:20,958 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory
+2025-05-10 02:22:31,477 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/astrazeneca
+2025-05-10 02:22:43,359 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory
+2025-05-10 02:22:53,919 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:23:08,288 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:23:17,866 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:23:27,082 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:25:48,271 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:25:48,279 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:25:48,283 - database - INFO - Executing schema script
+2025-05-10 02:25:48,284 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:25:48,285 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:25:48,285 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:25:48,285 - database - INFO - Executing schema script
+2025-05-10 02:25:48,286 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:25:49,716 - database - INFO - Updated file status: data/html/935128472516.html -> pending
+2025-05-10 02:25:49,716 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights
+2025-05-10 02:25:51,282 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> pending
+2025-05-10 02:25:51,282 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:25:52,599 - database - INFO - Updated file status: data/html/22a19c0b2b6c.html -> pending
+2025-05-10 02:25:52,599 - database - INFO - URL: https://lambda.ai/case-studies
+2025-05-10 02:26:01,930 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:26:54,017 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:26:54,031 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:26:54,036 - database - INFO - Executing schema script
+2025-05-10 02:26:54,038 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:26:54,040 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:26:54,040 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:26:54,040 - database - INFO - Executing schema script
+2025-05-10 02:26:54,041 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:26:55,573 - database - INFO - Updated file status: data/html/935128472516.html -> pending
+2025-05-10 02:26:55,573 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights
+2025-05-10 02:26:57,034 - database - INFO - Updated file status: data/html/3ce1b0a15ad5.html -> pending
+2025-05-10 02:26:57,034 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 02:26:58,181 - database - INFO - Updated file status: data/html/22a19c0b2b6c.html -> pending
+2025-05-10 02:26:58,181 - database - INFO - URL: https://lambda.ai/case-studies
+2025-05-10 02:27:12,108 - database - INFO - Case study already exists for URL: https://lambda.ai/case-studies/fal
+2025-05-10 02:27:30,389 - database - INFO - Case study already exists for URL: https://lambda.ai/case-studies/pika
+2025-05-10 02:27:45,188 - database - INFO - Case study already exists for URL: https://lambda.ai/case-studies/genesis-therapeutics
+2025-05-10 02:28:04,618 - database - INFO - Case study already exists for URL: https://lambda.ai/case-studies/iambic-therapeutics
+2025-05-10 02:28:13,601 - database - INFO - Case study already exists for URL: https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory
+2025-05-10 02:28:30,890 - database - INFO - Case study already exists for URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:28:40,030 - database - INFO - Added case study with ID: 21
+2025-05-10 02:28:48,441 - database - INFO - Added case study with ID: 22
+2025-05-10 02:28:56,520 - database - INFO - Added case study with ID: 23
+2025-05-10 02:30:46,110 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:30:46,127 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:30:46,129 - database - INFO - Executing schema script
+2025-05-10 02:30:46,131 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:30:46,133 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:30:46,134 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:30:46,134 - database - INFO - Executing schema script
+2025-05-10 02:30:46,134 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:31:22,086 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:31:22,102 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:31:22,104 - database - INFO - Executing schema script
+2025-05-10 02:31:22,106 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:31:22,108 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:31:22,108 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:31:22,109 - database - INFO - Executing schema script
+2025-05-10 02:31:22,109 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:37:16,319 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:37:16,332 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:37:16,337 - database - INFO - Executing schema script
+2025-05-10 02:37:16,338 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:37:16,341 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:37:16,341 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:37:16,342 - database - INFO - Executing schema script
+2025-05-10 02:37:16,342 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:37:16,353 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:37:16,354 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:37:32,574 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:37:32,574 - database - INFO - Error message: CustomerStoryDB.add_case_study() got an unexpected keyword argument 'customer_name'
+2025-05-10 02:37:32,574 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:37:32,580 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:37:32,580 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:37:43,161 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:37:43,161 - database - INFO - Error message: CustomerStoryDB.add_case_study() got an unexpected keyword argument 'customer_name'
+2025-05-10 02:37:43,161 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:40:59,765 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:40:59,778 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:40:59,794 - database - INFO - Executing schema script
+2025-05-10 02:40:59,795 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:40:59,796 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:40:59,797 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:40:59,797 - database - INFO - Executing schema script
+2025-05-10 02:40:59,797 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:40:59,808 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:40:59,808 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:41:10,828 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:41:10,829 - database - INFO - Error message: table case_studies has no column named story_data
+2025-05-10 02:41:10,829 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:41:10,834 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:41:10,835 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:41:22,771 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:41:22,771 - database - INFO - Error message: table case_studies has no column named story_data
+2025-05-10 02:41:22,771 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:43:38,482 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:43:38,497 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:43:38,502 - database - INFO - Executing schema script
+2025-05-10 02:43:38,503 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:43:38,506 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:43:38,506 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:43:38,506 - database - INFO - Executing schema script
+2025-05-10 02:43:38,507 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:43:38,519 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:43:38,519 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:43:51,409 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:43:51,410 - database - INFO - Error message: CustomerStoryDB.add_case_study() missing 1 required positional argument: 'story_data'
+2025-05-10 02:43:51,410 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:43:51,412 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:43:51,412 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:44:06,545 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:44:06,546 - database - INFO - Error message: CustomerStoryDB.add_case_study() missing 1 required positional argument: 'story_data'
+2025-05-10 02:44:06,546 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:46:07,154 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:46:07,170 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:46:07,175 - database - INFO - Executing schema script
+2025-05-10 02:46:07,177 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:46:07,179 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:46:07,179 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:46:07,180 - database - INFO - Executing schema script
+2025-05-10 02:46:07,180 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:46:07,191 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:46:07,191 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:46:18,695 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:46:18,695 - database - INFO - Error message: NOT NULL constraint failed: case_studies.url
+2025-05-10 02:46:18,695 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:46:18,701 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:46:18,701 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:46:29,979 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:46:29,980 - database - INFO - Error message: NOT NULL constraint failed: case_studies.url
+2025-05-10 02:46:29,980 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:47:04,609 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:47:04,629 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:47:04,633 - database - INFO - Executing schema script
+2025-05-10 02:47:04,634 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:47:04,637 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:47:04,637 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:47:04,638 - database - INFO - Executing schema script
+2025-05-10 02:47:04,638 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:47:04,650 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:47:04,650 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:47:19,948 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:47:19,948 - database - INFO - Error message: UNIQUE constraint failed: case_studies.url
+2025-05-10 02:47:19,948 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:47:19,954 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:47:19,954 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:47:31,050 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:47:31,050 - database - INFO - Error message: UNIQUE constraint failed: case_studies.url
+2025-05-10 02:47:31,050 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:50:08,848 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:50:08,864 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:50:08,868 - database - INFO - Executing schema script
+2025-05-10 02:50:08,869 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:50:08,872 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:50:08,873 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:50:08,873 - database - INFO - Executing schema script
+2025-05-10 02:50:08,873 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:50:08,884 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:50:08,884 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:50:29,038 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:50:29,039 - database - INFO - Error message: Error binding parameter 5: type 'list' is not supported
+2025-05-10 02:50:29,039 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:50:29,045 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:50:29,045 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:50:40,340 - database - INFO - Updated file status: data/html/885c8929529f.html -> failed
+2025-05-10 02:50:40,341 - database - INFO - Error message: Error binding parameter 5: type 'list' is not supported
+2025-05-10 02:50:40,341 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:55:56,532 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:55:56,546 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:55:56,550 - database - INFO - Executing schema script
+2025-05-10 02:55:56,551 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:55:56,554 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:55:56,554 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:55:56,554 - database - INFO - Executing schema script
+2025-05-10 02:55:56,555 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:55:56,569 - database - INFO - Updated file status: data/html/885c8929529f.html -> processing
+2025-05-10 02:55:56,569 - database - INFO - URL: https://lambda.ai/case-studies/meshy
+2025-05-10 02:58:03,961 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:58:03,978 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:58:03,982 - database - INFO - Executing schema script
+2025-05-10 02:58:03,984 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:58:03,986 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 02:58:03,986 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 02:58:03,987 - database - INFO - Executing schema script
+2025-05-10 02:58:03,987 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 02:58:03,999 - database - INFO - Updated file status: data/html/13c86f6e68eb.html -> processing
+2025-05-10 02:58:03,999 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/alphasense
+2025-05-10 02:58:04,018 - database - INFO - Updated file status: data/html/13c86f6e68eb.html -> failed
+2025-05-10 02:58:04,018 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/13c86f6e68eb.html. Skipping LLM extraction.
+2025-05-10 02:58:04,018 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/alphasense
+2025-05-10 02:58:04,020 - database - INFO - Updated file status: data/html/5fd4aafaaa17.html -> processing
+2025-05-10 02:58:04,020 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/mayo-clinic
+2025-05-10 02:58:04,038 - database - INFO - Updated file status: data/html/5fd4aafaaa17.html -> failed
+2025-05-10 02:58:04,038 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/5fd4aafaaa17.html. Skipping LLM extraction.
+2025-05-10 02:58:04,038 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/mayo-clinic
+2025-05-10 02:58:04,041 - database - INFO - Updated file status: data/html/63891b30b32f.html -> processing
+2025-05-10 02:58:04,041 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/totalenergies
+2025-05-10 02:58:04,054 - database - INFO - Updated file status: data/html/63891b30b32f.html -> failed
+2025-05-10 02:58:04,054 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/63891b30b32f.html. Skipping LLM extraction.
+2025-05-10 02:58:04,054 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/totalenergies
+2025-05-10 02:58:04,057 - database - INFO - Updated file status: data/html/163044e5aaf2.html -> processing
+2025-05-10 02:58:04,057 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre
+2025-05-10 02:58:04,070 - database - INFO - Updated file status: data/html/163044e5aaf2.html -> failed
+2025-05-10 02:58:04,070 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/163044e5aaf2.html. Skipping LLM extraction.
+2025-05-10 02:58:04,071 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre
+2025-05-10 02:58:04,072 - database - INFO - Updated file status: data/html/61ea7282573a.html -> processing
+2025-05-10 02:58:04,073 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/psc
+2025-05-10 02:58:04,085 - database - INFO - Updated file status: data/html/61ea7282573a.html -> failed
+2025-05-10 02:58:04,085 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/61ea7282573a.html. Skipping LLM extraction.
+2025-05-10 02:58:04,085 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/psc
+2025-05-10 02:58:04,087 - database - INFO - Updated file status: data/html/b967a8f56071.html -> processing
+2025-05-10 02:58:04,087 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/epcc
+2025-05-10 02:58:04,102 - database - INFO - Updated file status: data/html/b967a8f56071.html -> failed
+2025-05-10 02:58:04,102 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/b967a8f56071.html. Skipping LLM extraction.
+2025-05-10 02:58:04,102 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/epcc
+2025-05-10 02:58:04,105 - database - INFO - Updated file status: data/html/0e1fec1af446.html -> processing
+2025-05-10 02:58:04,105 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory
+2025-05-10 02:58:04,117 - database - INFO - Updated file status: data/html/0e1fec1af446.html -> failed
+2025-05-10 02:58:04,117 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/0e1fec1af446.html. Skipping LLM extraction.
+2025-05-10 02:58:04,117 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory
+2025-05-10 02:58:04,119 - database - INFO - Updated file status: data/html/2d3dc3b2fefb.html -> processing
+2025-05-10 02:58:04,119 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/astrazeneca
+2025-05-10 02:58:04,131 - database - INFO - Updated file status: data/html/2d3dc3b2fefb.html -> failed
+2025-05-10 02:58:04,131 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/2d3dc3b2fefb.html. Skipping LLM extraction.
+2025-05-10 02:58:04,131 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/astrazeneca
+2025-05-10 02:58:04,134 - database - INFO - Updated file status: data/html/455e941cd788.html -> processing
+2025-05-10 02:58:04,134 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory
+2025-05-10 02:58:04,148 - database - INFO - Updated file status: data/html/455e941cd788.html -> failed
+2025-05-10 02:58:04,148 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/455e941cd788.html. Skipping LLM extraction.
+2025-05-10 02:58:04,148 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory
+2025-05-10 02:58:04,150 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> processing
+2025-05-10 02:58:04,150 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:58:04,163 - database - INFO - Updated file status: data/html/a7add6143d9e.html -> failed
+2025-05-10 02:58:04,163 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/a7add6143d9e.html. Skipping LLM extraction.
+2025-05-10 02:58:04,163 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications
+2025-05-10 02:58:04,164 - database - INFO - Updated file status: data/html/d69240132f0d.html -> processing
+2025-05-10 02:58:04,164 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:58:04,176 - database - INFO - Updated file status: data/html/d69240132f0d.html -> failed
+2025-05-10 02:58:04,176 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/d69240132f0d.html. Skipping LLM extraction.
+2025-05-10 02:58:04,176 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/aleph-alpha
+2025-05-10 02:58:04,177 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> processing
+2025-05-10 02:58:04,177 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:58:04,189 - database - INFO - Updated file status: data/html/2a035088a0cb.html -> failed
+2025-05-10 02:58:04,189 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/2a035088a0cb.html. Skipping LLM extraction.
+2025-05-10 02:58:04,189 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/national-laboratories
+2025-05-10 02:58:04,191 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> processing
+2025-05-10 02:58:04,191 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:58:04,202 - database - INFO - Updated file status: data/html/35cc7921c4d2.html -> failed
+2025-05-10 02:58:04,202 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/35cc7921c4d2.html. Skipping LLM extraction.
+2025-05-10 02:58:04,202 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/nference
+2025-05-10 02:58:04,205 - database - INFO - Updated file status: data/html/fbf837391545.html -> processing
+2025-05-10 02:58:04,205 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:58:04,218 - database - INFO - Updated file status: data/html/fbf837391545.html -> failed
+2025-05-10 02:58:04,218 - database - INFO - Error message: Cleaned text too short after all fallbacks for data/html/fbf837391545.html. Skipping LLM extraction.
+2025-05-10 02:58:04,218 - database - INFO - URL: https://www.cerebras.ai/customer-spotlights/glaxosmithkline
+2025-05-10 02:58:04,220 - database - INFO - Updated file status: data/html/b527fe171ad7.html -> processing
+2025-05-10 02:58:04,220 - database - INFO - URL: https://lambda.ai/case-studies/fal
+2025-05-10 03:00:57,143 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 03:00:57,160 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 03:00:57,162 - database - INFO - Executing schema script
+2025-05-10 03:00:57,169 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 03:00:57,171 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 03:00:57,171 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 03:00:57,171 - database - INFO - Executing schema script
+2025-05-10 03:00:57,172 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 03:00:57,189 - database - INFO - Updated file status: data/html/6ff565b9c230.html -> processing
+2025-05-10 03:00:57,189 - database - INFO - URL: https://lambda.ai/case-studies/pika

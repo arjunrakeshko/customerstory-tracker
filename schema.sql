@@ -5,14 +5,14 @@ CREATE TABLE companies(
   website_url TEXT,
   industry TEXT,
   category TEXT,
-  headquarters_country TEXT  -- Changed from location to just country
+  headquarters_country TEXT
 );
 
 -- industries
 CREATE TABLE industries(
   industry_id INTEGER PRIMARY KEY,
   name TEXT UNIQUE,
-  parent_id INTEGER REFERENCES industries(industry_id)  -- For hierarchical industry classification
+  parent_id INTEGER REFERENCES industries(industry_id)
 );
 
 -- standardized use cases
@@ -20,46 +20,45 @@ CREATE TABLE use_cases(
   use_case_id INTEGER PRIMARY KEY,
   name TEXT UNIQUE,
   description TEXT,
-  parent_id INTEGER REFERENCES use_cases(use_case_id)  -- For hierarchical use case classification
+  parent_id INTEGER REFERENCES use_cases(use_case_id)
 );
 
 -- standardized personas
 CREATE TABLE personas(
   persona_id INTEGER PRIMARY KEY,
-  title TEXT UNIQUE,
-  description TEXT,
-  level TEXT  -- e.g., 'C-Level', 'Director', 'Manager', 'Individual Contributor'
+  name TEXT,
+  designation TEXT,
+  level TEXT
 );
 
 -- case studies
 CREATE TABLE IF NOT EXISTS case_studies (
-    case_study_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    company_id INTEGER,
-    persona_id INTEGER,
-    use_case_id INTEGER,
-    url TEXT UNIQUE,
-    title TEXT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    url TEXT UNIQUE NOT NULL,
     publication_date TEXT,
     full_text TEXT,
     customer_name TEXT,
-    customer_location TEXT,
+    customer_city TEXT DEFAULT 'NA',
+    customer_country TEXT DEFAULT 'NA',
     customer_industry TEXT,
-    persona_title TEXT,
+    persona_name TEXT,
+    persona_designation TEXT,
     use_case TEXT,
-    embedding TEXT,
-    date_added TEXT,
-    FOREIGN KEY (company_id) REFERENCES companies(company_id),
-    FOREIGN KEY (persona_id) REFERENCES personas(persona_id),
-    FOREIGN KEY (use_case_id) REFERENCES use_cases(use_case_id)
+    benefits TEXT,
+    benefit_tags TEXT,
+    technologies TEXT,
+    partners TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Track which LLM functions have been applied to each case study
 CREATE TABLE llm_processing_status(
   case_study_id INTEGER REFERENCES case_studies,
-  function_name TEXT,               -- Name of the LLM function
-  status TEXT,                      -- 'pending', 'processing', 'completed', 'failed'
-  error_message TEXT,               -- Error message if status is 'failed'
-  timestamp TEXT,                   -- ISO timestamp of last attempt
+  function_name TEXT,
+  status TEXT,
+  error_message TEXT,
+  timestamp TEXT,
   PRIMARY KEY(case_study_id, function_name)
 );
 
@@ -113,54 +112,30 @@ CREATE TABLE case_study_partners(
 
 -- Track file processing status
 CREATE TABLE file_processing_status(
-  file_path TEXT PRIMARY KEY,
-  url TEXT UNIQUE,
-  status TEXT,                      -- 'pending', 'processing', 'completed', 'failed'
-  error_message TEXT,               -- Error message if status is 'failed'
-  last_attempt TEXT,                -- ISO timestamp of last attempt
-  case_study_id INTEGER REFERENCES case_studies,  -- ID of processed case study if successful
-  FOREIGN KEY (url) REFERENCES case_studies(url)
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  file_path TEXT UNIQUE NOT NULL,
+  url TEXT NOT NULL,
+  status TEXT NOT NULL,
+  error_message TEXT,
+  last_attempt TEXT,
+  case_study_id INTEGER REFERENCES case_studies(id),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create index for file processing status
-CREATE INDEX idx_file_processing_status ON file_processing_status(status);
-
 -- Create indexes for better query performance
+CREATE INDEX idx_file_processing_status ON file_processing_status(status);
 CREATE INDEX idx_case_studies_url ON case_studies(url);
 CREATE INDEX idx_case_studies_publication_date ON case_studies(publication_date);
 CREATE INDEX idx_case_studies_customer_industry ON case_studies(customer_industry);
 CREATE INDEX idx_case_studies_use_case ON case_studies(use_case);
-CREATE INDEX idx_case_studies_persona ON case_studies(persona_title);
-CREATE INDEX idx_case_studies_location ON case_studies(customer_location);
+CREATE INDEX idx_case_studies_persona_designation ON case_studies(persona_designation);
+CREATE INDEX idx_case_studies_customer_country ON case_studies(customer_country);
+CREATE INDEX idx_case_studies_customer_city ON case_studies(customer_city);
+CREATE INDEX idx_case_studies_benefit_tags ON case_studies(benefit_tags);
 CREATE INDEX idx_benefits_name ON benefits(benefit_name);
 CREATE INDEX idx_technologies_name ON technologies(technology_name);
 CREATE INDEX idx_partners_name ON partners(partner_name);
-
--- Insert some common use cases
-INSERT OR IGNORE INTO use_cases (name, description) VALUES
-('AI/ML Model Training', 'Training and fine-tuning AI/ML models'),
-('Data Processing', 'Processing and analyzing large datasets'),
-('High Performance Computing', 'Running computationally intensive workloads'),
-('Drug Discovery', 'Accelerating drug discovery and development'),
-('Genomics Research', 'Processing and analyzing genomic data'),
-('Financial Analysis', 'Financial modeling and analysis'),
-('Natural Language Processing', 'Text analysis and language understanding'),
-('Computer Vision', 'Image and video processing'),
-('Generative AI', 'Creating new content using AI'),
-('Scientific Computing', 'Scientific simulations and research');
-
--- Insert some common personas
-INSERT OR IGNORE INTO personas (title, level, description) VALUES
-('Chief Technology Officer', 'C-Level', 'Senior technology executive'),
-('Chief Information Officer', 'C-Level', 'Senior IT executive'),
-('Chief Data Officer', 'C-Level', 'Senior data management executive'),
-('VP of Engineering', 'Executive', 'Senior engineering leader'),
-('VP of Data Science', 'Executive', 'Senior data science leader'),
-('Director of AI/ML', 'Director', 'AI/ML department leader'),
-('Data Science Manager', 'Manager', 'Data science team leader'),
-('AI/ML Engineer', 'Individual Contributor', 'AI/ML development specialist'),
-('Data Scientist', 'Individual Contributor', 'Data analysis specialist'),
-('Research Scientist', 'Individual Contributor', 'Research and development specialist');
 
 -- Insert common benefits
 INSERT OR IGNORE INTO benefits (benefit_name) VALUES

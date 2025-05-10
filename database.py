@@ -237,46 +237,38 @@ class CustomerStoryDB:
             """, (url,))
             return cursor.fetchone() is not None
 
-    def add_case_study(self, url: str, title: str, publication_date: str, full_text: str, 
-                       customer_name: str = '', customer_location: str = '', 
-                       customer_industry: str = '', persona_title: str = '', 
-                       use_case: str = '', benefits: List[str] = None, 
-                       technologies: List[str] = None, partners: List[str] = None, 
-                       company_id: int = 1, embedding: List[float] = None) -> int:
-        """Add a case study and return its ID."""
-        with self._get_connection() as conn:
-            # First add the case study
-            cursor = conn.execute(
-                """INSERT INTO case_studies (
-                    url, title, publication_date, full_text, customer_name,
-                    customer_location, customer_industry, persona_title,
-                    use_case, company_id, embedding, date_added
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (url, title, publication_date, full_text, customer_name,
-                 customer_location, customer_industry, persona_title,
-                 use_case, company_id, 
-                 json.dumps(embedding) if embedding else None,
-                 datetime.now().isoformat())
-            )
-            case_study_id = cursor.lastrowid
+    def add_case_study(self, url: str, customer_name: Optional[str] = None,
+                      customer_industry: Optional[str] = None,
+                      use_case: Optional[str] = None,
+                      benefits: Optional[List[str]] = None,
+                      benefit_tags: Optional[List[str]] = None,
+                      technologies: Optional[List[str]] = None,
+                      partners: Optional[List[str]] = None) -> int:
+        """Add a new case study to the database or update if URL exists."""
+        try:
+            # Convert lists to JSON strings
+            benefits_json = json.dumps(benefits) if benefits else None
+            benefit_tags_json = json.dumps(benefit_tags) if benefit_tags else None
+            technologies_json = json.dumps(technologies) if technologies else None
+            partners_json = json.dumps(partners) if partners else None
             
-            # Add benefits
-            if benefits:
-                for benefit in benefits:
-                    self.add_benefit(case_study_id, benefit)
-            
-            # Add technologies
-            if technologies:
-                for tech in technologies:
-                    self.add_technology(case_study_id, tech)
-            
-            # Add partners
-            if partners:
-                for partner in partners:
-                    self.add_partner(case_study_id, partner)
-            
-            conn.commit()
-            return case_study_id
+            # Use INSERT OR REPLACE to handle existing URLs
+            cursor = self._get_connection().cursor()
+            cursor.execute("""
+                INSERT OR REPLACE INTO case_studies (
+                    url, customer_name, customer_industry, use_case,
+                    benefits, benefit_tags, technologies, partners,
+                    created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            """, (
+                url, customer_name, customer_industry, use_case,
+                benefits_json, benefit_tags_json, technologies_json, partners_json
+            ))
+            self._get_connection().commit()
+            return cursor.lastrowid
+        except Exception as e:
+            self._get_connection().rollback()
+            raise e
 
     def add_tag(self, tag_name: str) -> int:
         """Add a tag and return its ID."""
@@ -651,4 +643,45 @@ class CustomerStoryDB:
                 SET {set_clause}
                 WHERE case_study_id = ?
             """, values)
-            conn.commit() 
+            conn.commit()
+
+    def update_file_status(self, file_path: str, status: str, error_message: Optional[str] = None, 
+                          case_study_id: Optional[int] = None, url: Optional[str] = None) -> None:
+        """Update the processing status of a file.
+        
+        Args:
+            file_path: Path to the file
+            status: One of 'pending', 'processing', 'completed', 'failed'
+            error_message: Optional error message for failed status
+            case_study_id: Optional ID of the processed case study
+            url: Optional URL associated with the file
+        """
+        if status not in ['pending', 'processing', 'completed', 'failed']:
+            raise ValueError(f"Invalid status: {status}. Must be one of: pending, processing, completed, failed")
+            
+        with self._get_connection() as conn:
+            # If URL is not provided, try to get it from existing record
+            if not url:
+                cursor = conn.execute("""
+                    SELECT url FROM file_processing_status WHERE file_path = ?
+                """, (file_path,))
+                row = cursor.fetchone()
+                if row:
+                    url = row['url']
+            
+            # Update the file status
+            conn.execute("""
+                INSERT OR REPLACE INTO file_processing_status
+                (file_path, url, status, error_message, last_attempt, case_study_id)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (file_path, url, status, error_message, datetime.now().isoformat(), case_study_id))
+            conn.commit()
+            
+            # Log the status update
+            logger.info(f"Updated file status: {file_path} -> {status}")
+            if error_message:
+                logger.info(f"Error message: {error_message}")
+            if url:
+                logger.info(f"URL: {url}")
+            if case_study_id:
+                logger.info(f"Case study ID: {case_study_id}") 

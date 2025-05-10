@@ -97,7 +97,7 @@ class OpenAILLMInterface:
                 temperature=0.7,
                 max_tokens=1000
             )
-            usage = response.usage._asdict()
+            usage = dict(response.usage)
             input_tokens = usage.get('prompt_tokens', 0)
             output_tokens = usage.get('completion_tokens', 0)
             self.total_input_tokens += input_tokens
@@ -161,17 +161,28 @@ Title:"""
 
     def extract_publication_date(self, text: str) -> str:
         """Extract publication date in YYYY-MM-DD format."""
-        prompt = f"""Extract the publication date in YYYY-MM-DD format. If no date is found, return an empty string:
+        prompt = f"""Extract the publication date from this text. Return only the date in YYYY-MM-DD format. If no date is found, return 'NA'.
+        Look for dates in various formats and convert them to YYYY-MM-DD.
+        Examples of valid dates to extract:
+        - "Published on January 15, 2024" -> "2024-01-15"
+        - "Posted: 2024-01-15" -> "2024-01-15"
+        - "15th January 2024" -> "2024-01-15"
+        - "01/15/2024" -> "2024-01-15"
+        
+        Text: {text}
 
-{text}
-
-Date:"""
+        Date:"""
         date_str, _ = self._call_llm(prompt)
+        date_str = date_str.strip()
+        
+        # Validate the date format
         try:
-            datetime.strptime(date_str.strip(), "%Y-%m-%d")
-            return date_str.strip()
-        except:
-            return ""
+            if date_str != 'NA':
+                datetime.strptime(date_str, "%Y-%m-%d")
+            return date_str
+        except ValueError:
+            logger.warning(f"Invalid date format returned by LLM: {date_str}")
+            return 'NA'
 
     def extract_customer_name(self, text: str) -> str:
         """Extract the customer company name."""
@@ -267,130 +278,143 @@ Partners:"""
         partners = partners_text.strip().split("\n")
         return [partner.strip() for partner in partners if partner.strip()]
 
-    def extract_story_from_html(self, html_content: str, url: str) -> Optional[Dict[str, Any]]:
-        """Extract story data from HTML content.
+    def extract_title_from_html(self, html_content: str) -> str:
+        """Extract a concise title from the HTML content."""
+        prompt = f"""Extract a concise title (max 120 characters) that captures the main outcome from the following HTML content:
+
+{html_content}
+
+Title:"""
+        title, _ = self._call_llm(prompt)
+        return title.strip()[:120]
+
+    def extract_story_from_html(self, text: str, url: str) -> Dict[str, Any]:
+        """Extract story data from text content using LLM.
         
         Args:
-            html_content: The HTML content to extract from
-            url: The URL of the page
+            text: Cleaned text content of the page
+            url: URL of the page
             
         Returns:
-            Dictionary containing extracted story data or None if extraction fails
+            Dictionary containing extracted story data with the following keys:
+                - publication_date: Publication date in YYYY-MM-DD format
+                - full_text: Full text content
+                - customer_name: Name of the customer
+                - customer_city: City of the customer
+                - customer_country: Country of the customer
+                - customer_industry: Industry of the customer
+                - persona_name: Name of the main persona
+                - persona_designation: Designation of the main persona
+                - use_case: Main use case
+                - benefits: List of benefits
+                - benefit_tags: List of benefit tags
+                - technologies: List of technologies
+                - partners: List of partners
         """
+        # Extract publication date using the dedicated method
+        publication_date = self.extract_publication_date(text)
+        
+        # Extract customer name
+        customer_prompt = f"""Extract the customer/company name from this text. Return only the name. Do not include the vendor company name if mentioned.
+        
+        Text: {text[:1000]}"""
+        customer_name, _ = self._call_llm(customer_prompt)
+        logger.info(f"[LLM RAW] customer_name: {repr(customer_name)}")
+        customer_name = customer_name.strip()
+        
+        # Extract customer location
+        location_prompt = f"""Extract the customer's city and country from this text. Return in format: city|country. If not found, use 'NA' for that field.
+        Example: New York|USA or London|UK or NA|France
+        
+        Text: {text[:1000]}"""
+        location, _ = self._call_llm(location_prompt)
+        location = location.strip()
+        customer_city, customer_country = location.split('|') if '|' in location else ('NA', 'NA')
+        
+        # Extract customer industry
+        industry_prompt = f"""Extract the customer's industry from this text. Return only the industry name.
+        
+        Text: {text[:1000]}"""
+        customer_industry, _ = self._call_llm(industry_prompt)
+        logger.info(f"[LLM RAW] customer_industry: {repr(customer_industry)}")
+        customer_industry = customer_industry.strip()
+        
+        # Extract persona information
+        persona_prompt = f"""Extract the name and designation of the main persona mentioned in this text. Return in format: name|designation.
+        Example: John Smith|CTO or Sarah Johnson|Head of AI
+        
+        Text: {text[:1000]}"""
+        persona_info, _ = self._call_llm(persona_prompt)
+        persona_info = persona_info.strip()
+        persona_name, persona_designation = persona_info.split('|') if '|' in persona_info else ('NA', 'NA')
+        
+        # Extract use case
+        use_case_prompt = f"""Extract the main use case from this text. Return a clear, concise description without quotes.
+        
+        Text: {text[:1000]}"""
+        use_case, _ = self._call_llm(use_case_prompt)
+        logger.info(f"[LLM RAW] use_case: {repr(use_case)}")
+        use_case = use_case.strip().strip('"')
+        
+        # Extract benefits
+        benefits_prompt = f"""Extract the key benefits mentioned in this text. Return as a JSON array of strings.
+        Example: ["50% reduction in processing time", "Improved accuracy by 25%"]
+        
+        Text: {text[:1000]}"""
+        benefits, _ = self._call_llm(benefits_prompt)
         try:
-            # Parse HTML
-            soup = BeautifulSoup(html_content, 'html.parser')
-            
-            # Remove unwanted elements
-            for element in soup.find_all(['script', 'style', 'nav', 'footer', 'header', 'iframe', 'video', 'audio', 'img', 'button', 'input', 'select', 'form']):
-                element.decompose()
-            
-            # Remove social media sharing divs
-            for div in soup.find_all('div', class_=lambda x: x and any(term in str(x).lower() for term in ['share', 'social', 'twitter', 'facebook', 'linkedin'])):
-                div.decompose()
-            
-            # Remove advertisement divs
-            for div in soup.find_all('div', class_=lambda x: x and any(term in str(x).lower() for term in ['ad', 'advertisement', 'banner', 'sponsored'])):
-                div.decompose()
-            
-            # Remove media containers
-            for div in soup.find_all('div', class_=lambda x: x and any(term in str(x).lower() for term in ['media', 'video', 'image', 'gallery'])):
-                div.decompose()
-            
-            # Find main content container
-            main_content = None
-            for tag in ['article', 'main', 'div']:
-                main_content = soup.find(tag, class_=lambda x: x and any(term in str(x).lower() for term in ['content', 'article', 'post', 'story']))
-                if main_content:
-                    break
-            
-            if not main_content:
-                main_content = soup
-            
-            # Get clean text content
-            clean_text = main_content.get_text(separator='\n', strip=True)
-            
-            # Remove common phrases
-            skip_patterns = [
-                r'click to enlarge',
-                r'play video',
-                r'watch video',
-                r'view image',
-                r'click here',
-                r'read more',
-                r'share this',
-                r'follow us',
-                r'subscribe',
-                r'newsletter',
-                r'cookie',
-                r'privacy policy',
-                r'terms of use',
-                r'copyright',
-                r'all rights reserved'
-            ]
-            
-            for pattern in skip_patterns:
-                clean_text = re.sub(pattern, '', clean_text, flags=re.IGNORECASE)
-            
-            # Clean up whitespace
-            clean_text = re.sub(r'\n\s*\n', '\n\n', clean_text)
-            clean_text = clean_text.strip()
-            
-            # Extract title
-            title = self.extract_title(clean_text)
-            if not title:
-                logger.error("Failed to extract title")
-                return None
-            
-            # Extract customer name
-            customer_name = self.extract_customer_name(clean_text)
-            
-            # Extract publication date
-            publication_date = self.extract_publication_date(clean_text)
-            
-            # Extract customer location
-            customer_location = self.extract_customer_location(clean_text)
-            
-            # Extract customer industry
-            customer_industry = self.extract_customer_industry(clean_text)
-            
-            # Extract persona title
-            persona_title = self.extract_persona_title(clean_text)
-            
-            # Extract use case
-            use_case = self.categorize_use_case(clean_text)
-            
-            # Extract tags
-            tags = self.extract_tags(clean_text)
-            
-            # Extract benefits
-            benefits = self.extract_benefits(clean_text)
-            
-            # Extract technologies
-            technologies = self.extract_technologies(clean_text)
-            
-            # Extract partners
-            partners = self.extract_partners(clean_text)
-            
-            # Return extracted data
-            return {
-                'url': url,
-                'title': title,
-                'full_text': clean_text,  # Store cleaned text content
-                'customer_name': customer_name,
-                'publication_date': publication_date,
-                'customer_location': customer_location,
-                'customer_industry': customer_industry,
-                'persona_title': persona_title,
-                'use_case': use_case,
-                'benefits': benefits,
-                'technologies': technologies,
-                'partners': partners
-            }
-            
-        except Exception as e:
-            logger.error(f"Error extracting story from HTML: {str(e)}")
-            return None
+            benefits = json.loads(benefits)
+        except json.JSONDecodeError:
+            benefits = []
+        
+        # Extract benefit tags
+        tags_prompt = f"""Extract key tags from these benefits that could be used for querying. Return as a JSON array of strings.
+        Benefits: {json.dumps(benefits)}
+        
+        Example: ["performance", "cost-reduction", "scalability"]"""
+        benefit_tags, _ = self._call_llm(tags_prompt)
+        try:
+            benefit_tags = json.loads(benefit_tags)
+        except json.JSONDecodeError:
+            benefit_tags = []
+        
+        # Extract technologies
+        tech_prompt = f"""Extract the technologies mentioned in this text. Return as a JSON array of strings.
+        Example: ["TensorFlow 2.0", "PyTorch", "CUDA"]
+        
+        Text: {text[:1000]}"""
+        technologies, _ = self._call_llm(tech_prompt)
+        try:
+            technologies = json.loads(technologies)
+        except json.JSONDecodeError:
+            technologies = []
+        
+        # Extract partners
+        partners_prompt = f"""Extract the partners mentioned in this text. Return as a JSON array of strings. Do not include the vendor company name if mentioned.
+        Example: ["NVIDIA", "Microsoft Azure", "AWS"]
+        
+        Text: {text[:1000]}"""
+        partners, _ = self._call_llm(partners_prompt)
+        try:
+            partners = json.loads(partners)
+        except json.JSONDecodeError:
+            partners = []
+        
+        return {
+            'publication_date': publication_date,
+            'full_text': text,
+            'customer_name': customer_name,
+            'customer_city': customer_city,
+            'customer_country': customer_country,
+            'customer_industry': customer_industry,
+            'persona_name': persona_name,
+            'persona_designation': persona_designation,
+            'use_case': use_case,
+            'benefits': benefits,
+            'benefit_tags': benefit_tags,
+            'technologies': technologies,
+            'partners': partners
+        }
 
 # Create a singleton instance
 openai_llm = OpenAILLMInterface()

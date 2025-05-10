@@ -159,6 +159,48 @@ Partners:"""
         """≥256-dimensional float vector."""
         return self._call_embedding(text)
 
+    def extract_story_from_html(self, html_content: str, url: str) -> Dict[str, Any]:
+        """Extract story data from HTML content.
+        
+        Args:
+            html_content: Raw HTML content
+            url: URL of the page
+            
+        Returns:
+            Dictionary containing extracted story data
+        """
+        # Parse HTML
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        # Remove unwanted elements
+        for element in soup.find_all(['script', 'style', 'nav', 'footer', 'header']):
+            element.decompose()
+            
+        # Get main content
+        main_content = soup.find('main') or soup.find('article') or soup.find('div', class_=['content', 'main', 'article'])
+        if not main_content:
+            main_content = soup
+            
+        # Extract text content
+        text = main_content.get_text(separator='\n', strip=True)
+        
+        # Extract metadata
+        story_data = {
+            'content': text,
+            'publication_date': self.extract_publication_date(text),
+            'customer_name': self.extract_customer_name(text),
+            'customer_location': self.extract_customer_location(text),
+            'customer_industry': self.extract_customer_industry(text),
+            'persona_title': self.extract_persona_title(text),
+            'use_case': self.categorize_use_case(text),
+            'benefits': self.extract_benefits(text),
+            'benefit_tags': self.extract_tags(text),
+            'technologies': self.extract_technologies(text),
+            'partners': self.extract_partners(text)
+        }
+        
+        return story_data
+
 # Create a singleton instance
 llm = LocalLLMInterface()
 
@@ -174,4 +216,5 @@ extract_tags = llm.extract_tags
 extract_benefits = llm.extract_benefits
 extract_technologies = llm.extract_technologies
 extract_partners = llm.extract_partners
-embed_text = llm.embed_text 
+embed_text = llm.embed_text
+extract_story_from_html = llm.extract_story_from_html 

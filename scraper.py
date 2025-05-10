@@ -29,6 +29,86 @@ def extract_story_from_html(html_content: str, url: str) -> Optional[Dict[str, A
     try:
         soup = BeautifulSoup(html_content, 'html.parser')
         
+        # First try to find publication date in metadata
+        publication_date = None
+        
+        # Check meta tags for publication date
+        meta_date_tags = [
+            'article:published_time',
+            'og:published_time',
+            'publication-date',
+            'date',
+            'datePublished',
+            'dateCreated',
+            'dateModified',
+            'DC.date.issued',
+            'DC.date.created'
+        ]
+        
+        for tag in meta_date_tags:
+            meta = soup.find('meta', property=tag) or soup.find('meta', name=tag)
+            if meta and meta.get('content'):
+                try:
+                    # Try to parse the date
+                    date_str = meta['content']
+                    # Handle various date formats
+                    if 'T' in date_str:  # ISO format with time
+                        date_str = date_str.split('T')[0]
+                    elif '/' in date_str:  # MM/DD/YYYY
+                        parts = date_str.split('/')
+                        if len(parts) == 3:
+                            date_str = f"{parts[2]}-{parts[0].zfill(2)}-{parts[1].zfill(2)}"
+                    # Validate the date format
+                    datetime.strptime(date_str, "%Y-%m-%d")
+                    publication_date = date_str
+                    break
+                except (ValueError, IndexError):
+                    continue
+        
+        # If no date in meta tags, look for common date patterns in content
+        if not publication_date:
+            # Look for date in common HTML elements
+            date_elements = soup.find_all(['time', 'span', 'div', 'p'], class_=lambda x: x and any(term in str(x).lower() for term in ['date', 'published', 'posted', 'time']))
+            for element in date_elements:
+                date_text = element.get_text(strip=True)
+                # Try to extract date from text
+                try:
+                    # Look for common date patterns
+                    date_patterns = [
+                        r'\d{4}-\d{2}-\d{2}',  # YYYY-MM-DD
+                        r'\d{1,2}/\d{1,2}/\d{4}',  # MM/DD/YYYY
+                        r'\d{1,2}\s+[A-Za-z]+\s+\d{4}',  # DD Month YYYY
+                        r'[A-Za-z]+\s+\d{1,2},?\s+\d{4}'  # Month DD, YYYY
+                    ]
+                    for pattern in date_patterns:
+                        match = re.search(pattern, date_text)
+                        if match:
+                            date_str = match.group(0)
+                            # Convert to YYYY-MM-DD format
+                            if '/' in date_str:
+                                parts = date_str.split('/')
+                                date_str = f"{parts[2]}-{parts[0].zfill(2)}-{parts[1].zfill(2)}"
+                            elif re.match(r'\d{1,2}\s+[A-Za-z]+\s+\d{4}', date_str):
+                                # Convert "DD Month YYYY" to YYYY-MM-DD
+                                try:
+                                    date_obj = datetime.strptime(date_str, "%d %B %Y")
+                                    date_str = date_obj.strftime("%Y-%m-%d")
+                                except ValueError:
+                                    continue
+                            elif re.match(r'[A-Za-z]+\s+\d{1,2},?\s+\d{4}', date_str):
+                                # Convert "Month DD, YYYY" to YYYY-MM-DD
+                                try:
+                                    date_obj = datetime.strptime(date_str, "%B %d, %Y")
+                                    date_str = date_obj.strftime("%Y-%m-%d")
+                                except ValueError:
+                                    continue
+                            # Validate the date format
+                            datetime.strptime(date_str, "%Y-%m-%d")
+                            publication_date = date_str
+                            break
+                except (ValueError, IndexError):
+                    continue
+        
         # Remove all media and interactive elements
         for element in soup.find_all([
             # Media elements
@@ -66,16 +146,12 @@ def extract_story_from_html(html_content: str, url: str) -> Optional[Dict[str, A
         if not main_content:
             return None
         
-        # Get the title
-        title = soup.find('h1')
-        title_text = title.text.strip() if title else ''
-        
-        # Extract only the main content text, preserving structure
+        # Extract all text content, preserving structure
         content_parts = []
-        for element in main_content.find_all(['p', 'h2', 'h3', 'h4', 'blockquote', 'ul', 'ol']):
-            if not element.text.strip():
+        for element in main_content.find_all(text=True):
+            if not element.strip():
                 continue
-            text = element.text.strip()
+            text = element.strip()
             text = re.sub(r'\s+', ' ', text)
             skip_patterns = [
                 r'^share this story$', r'^related stories$', r'^download case study$',
@@ -94,12 +170,12 @@ def extract_story_from_html(html_content: str, url: str) -> Optional[Dict[str, A
         company_name = company_domain.split('.')[0].title()
         
         return {
-            'title': title_text,
             'content': content,
             'url': url,
             'company_name': company_name,
             'company_domain': company_domain,
-            'extraction_date': datetime.now().isoformat()
+            'extraction_date': datetime.now().isoformat(),
+            'publication_date': publication_date  # Add the extracted publication date
         }
     except Exception as e:
         logger.error(f"Error extracting story from HTML: {str(e)}")
@@ -159,7 +235,7 @@ class ScrapingStrategy(ABC):
                 f.write(response.text)
             
             # Add to processing status
-            self.processor.update_file_status(str(html_path), 'pending', url=url)
+            self.db.update_file_status(str(html_path), 'pending', url=url)
             
             logger.info(f"Saved raw HTML to {html_path}")
             
@@ -262,10 +338,6 @@ class SubdirectoryCrawlStrategy(ScrapingStrategy):
         if not main_content:
             return None
         
-        # Get the title
-        title = soup.find('h1')
-        title_text = title.text.strip() if title else ''
-        
         # Extract only the main content text, preserving structure
         content_parts = []
         for element in main_content.find_all(['p', 'h2', 'h3', 'h4', 'blockquote', 'ul', 'ol']):
@@ -294,7 +366,7 @@ class SubdirectoryCrawlStrategy(ScrapingStrategy):
             'company_industry': '',  # Will be filled by LLM
             'company_category': '',  # Will be filled by LLM
             'company_location': '',  # Will be filled by LLM
-            'title': title_text,
+            'title': '',  # Will be filled by LLM
             'publication_date': '',  # Will be filled by LLM
             'full_text': content,
             'customer_name': '',  # Will be filled by LLM
@@ -329,6 +401,13 @@ class Scraper:
             ]
         )
         self.logger = logging.getLogger(__name__)
+        
+        # Create a mapping of domains to company names
+        self.domain_to_company = {}
+        for company in self.config:
+            if 'base_url' in company:
+                domain = urlparse(company['base_url']).netloc
+                self.domain_to_company[domain] = company['name']
 
     def _load_config(self) -> Dict[str, Any]:
         """Load the configuration from YAML file"""
@@ -368,6 +447,11 @@ class Scraper:
             all_stories.extend(stories)
         return all_stories
 
+    def _get_company_name(self, url: str) -> Optional[str]:
+        """Get company name from URL using the targets.yaml configuration."""
+        domain = urlparse(url).netloc
+        return self.domain_to_company.get(domain)
+
     def _extract_story(self, html_content: str, url: str) -> Optional[Dict[str, Any]]:
         """Extract story data from HTML content using LLM."""
         try:
@@ -383,13 +467,20 @@ class Scraper:
                     self.logger.info(f"URL already processed: {url}")
                     return None
 
+            # Get company name from URL
+            company_name = self._get_company_name(url)
+            if not company_name:
+                self.logger.warning(f"Could not determine company name for URL: {url}")
+                return None
+
             # Extract story data using LLM
             story_data = self.processor.llm_interface.extract_story_from_html(html_content, url)
             if not story_data:
                 return None
 
-            # Add URL to story data
+            # Add URL and company name to story data
             story_data['url'] = url
+            story_data['company_name'] = company_name
             return story_data
 
         except Exception as e:

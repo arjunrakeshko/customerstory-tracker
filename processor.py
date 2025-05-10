@@ -5,22 +5,10 @@ import json
 from datetime import datetime
 import schedule
 import time
-from local_llm_interface import (
-    extract_title as local_extract_title,
-    extract_publication_date as local_extract_publication_date,
-    extract_customer_name as local_extract_customer_name,
-    extract_customer_location as local_extract_customer_location,
-    extract_customer_industry as local_extract_customer_industry,
-    extract_persona_title as local_extract_persona_title,
-    categorize_use_case as local_categorize_use_case,
-    extract_tags as local_extract_tags,
-    extract_benefits as local_extract_benefits,
-    extract_technologies as local_extract_technologies,
-    extract_partners as local_extract_partners,
-    embed_text as local_embed_text
-)
+from local_llm_interface import LocalLLMInterface
 from openai_llm_interface import OpenAILLMInterface
 from database import CustomerStoryDB
+from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +17,7 @@ class StoryProcessor:
         self.db = db
         self.llm_interface = llm_interface
         self.logger = logging.getLogger(__name__)
+        self.local_llm = LocalLLMInterface()  # Create instance for local processing
 
     def get_pending_files(self) -> List[Dict[str, Any]]:
         """Get list of files that need processing."""
@@ -120,43 +109,84 @@ class StoryProcessor:
             if url:
                 self.logger.info(f"URL: {url}")
 
-    def process_file(self, file_path: str, html_content: str, url: str) -> Optional[int]:
-        """Process a single HTML file."""
+    def process_file(self, file_path: str, url: str) -> None:
+        """Process a single HTML file with improved content extraction and fallback logic."""
         try:
-            # Check if file is already processed
-            with self.db._get_connection() as conn:
-                cursor = conn.execute("""
-                    SELECT status, case_study_id, url
-                    FROM file_processing_status
-                    WHERE file_path = ?
-                """, (file_path,))
-                row = cursor.fetchone()
-                if row and row['status'] == 'completed':
-                    self.logger.info(f"File already processed: {file_path}")
-                    return row['case_study_id']
+            self.db.update_file_status(file_path, 'processing')
+            with open(file_path, 'r', encoding='utf-8') as f:
+                html_content = f.read()
 
-            # Update status to processing
-            self.update_file_status(file_path, 'processing', url=url)
+            soup = BeautifulSoup(html_content, 'html.parser')
+            # Remove unwanted elements
+            for element in soup.find_all(['script', 'style', 'nav', 'footer', 'header', 'noscript', 'aside', 'sidebar', 'menu', 'picture', 'source', 'track', 'textarea', 'canvas', 'svg', 'figure', 'figcaption']):
+                element.decompose()
+            for div in soup.find_all('div', class_=lambda x: x and any(term in str(x).lower() for term in ['cookie', 'popup', 'ad', 'social', 'share', 'related', 'sidebar', 'menu', 'footer', 'header'])):
+                div.decompose()
 
-            # Extract story data
-            story_data = self.llm_interface.extract_story_from_html(html_content, url)
-            if not story_data:
-                self.update_file_status(file_path, 'failed', 'Failed to extract story data', url=url)
-                return None
+            # Try to find main content container
+            main_content = None
+            for selector in ['article', 'main', 'div[class*="content"]', 'div[class*="story"]', 'div[class*="case-study"]']:
+                main_content = soup.select_one(selector)
+                if main_content:
+                    break
+            content = []
+            if main_content:
+                for tag in main_content.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li']):
+                    text = tag.get_text(strip=True)
+                    if text and not any(phrase in text.lower() for phrase in ['cookie', 'privacy', 'terms', 'subscribe', 'newsletter']):
+                        content.append(text)
+            clean_text = '\n'.join(content)
 
-            # Process the story
-            case_study_id = self.process_story(story_data)
-            if case_study_id:
-                self.update_file_status(file_path, 'completed', case_study_id=case_study_id, url=url)
-                return case_study_id
-            else:
-                self.update_file_status(file_path, 'failed', 'Failed to process story', url=url)
-                return None
+            # Fallback 1: meta description if main content is empty
+            if not clean_text.strip():
+                meta_desc = soup.find('meta', attrs={'name': 'description'})
+                if meta_desc and meta_desc.get('content'):
+                    clean_text = meta_desc['content'].strip()
+                    self.logger.info(f"Used <meta name='description'> as fallback for {file_path}")
 
+            # Fallback 2: title if still empty
+            if not clean_text.strip():
+                title_tag = soup.find('title')
+                if title_tag and title_tag.text.strip():
+                    clean_text = title_tag.text.strip()
+                    self.logger.info(f"Used <title> as fallback for {file_path}")
+
+            # Fallback 3: concatenate all <p> tags if still empty
+            if not clean_text.strip():
+                all_p = [p.get_text(strip=True) for p in soup.find_all('p') if p.get_text(strip=True)]
+                if all_p:
+                    clean_text = '\n'.join(all_p)
+                    self.logger.info(f"Used all <p> tags as fallback for {file_path}")
+
+            # Log cleaned text length and a sample
+            self.logger.info(f"Cleaned text length for {file_path}: {len(clean_text)}")
+            sample_text = clean_text[:200].replace('\n', ' ')
+            self.logger.info(f"Sample cleaned text: {sample_text}...")
+
+            # If still too short, skip LLM extraction
+            if len(clean_text.strip()) < 100:
+                msg = f"Cleaned text too short after all fallbacks for {file_path}. Skipping LLM extraction."
+                self.logger.warning(msg)
+                self.db.update_file_status(file_path, 'failed', msg)
+                return
+
+            # Extract story data using LLM
+            story_data = self.llm_interface.extract_story_from_html(clean_text, url)
+            # Add case study to database
+            case_study_id = self.db.add_case_study(
+                url=url,  # Use url parameter directly
+                customer_name=story_data.get('customer_name'),
+                customer_industry=story_data.get('customer_industry'),
+                use_case=story_data.get('use_case'),
+                benefits=story_data.get('benefits'),
+                benefit_tags=story_data.get('benefit_tags'),
+                technologies=story_data.get('technologies'),
+                partners=story_data.get('partners')
+            )
+            self.db.update_file_status(file_path, 'completed')
         except Exception as e:
-            self.logger.error(f"Error processing file {file_path}: {str(e)}")
-            self.update_file_status(file_path, 'failed', str(e), url=url)
-            return None
+            logger.error(f"Error processing file {file_path}: {str(e)}")
+            self.db.update_file_status(file_path, 'failed', str(e))
 
     def reprocess_failed_files(self, html_dir: str = "data/html") -> None:
         """Reprocess files that previously failed."""
@@ -177,16 +207,8 @@ class StoryProcessor:
             file_path = file_info['file_path']
             url = file_info['url']
             try:
-                # Read the HTML file
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    html_content = f.read()
-                
                 # Process the file
-                case_study_id = self.process_file(file_path, html_content, url)
-                if case_study_id:
-                    self.logger.info(f"Successfully reprocessed {file_path} (ID: {case_study_id})")
-                else:
-                    self.logger.error(f"Failed to reprocess {file_path}")
+                self.process_file(file_path, url)
 
             except Exception as e:
                 self.logger.error(f"Error reprocessing {file_path}: {str(e)}")
@@ -211,105 +233,54 @@ class StoryProcessor:
             file_path = file_info['file_path']
             url = file_info['url']
             try:
-                # Read the HTML file
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    html_content = f.read()
-                
                 # Process the file
-                case_study_id = self.process_file(file_path, html_content, url)
-                if case_study_id:
-                    self.logger.info(f"Successfully processed {file_path} (ID: {case_study_id})")
-                else:
-                    self.logger.error(f"Failed to process {file_path}")
+                self.process_file(file_path, url)
 
             except Exception as e:
                 self.logger.error(f"Error processing {file_path}: {str(e)}")
                 continue
 
     def process_story(self, story_data: Dict[str, Any]) -> Optional[int]:
-        """
-        Process a story and store it in the database.
+        """Process a story and add it to the database.
         
         Args:
-            story_data: Dictionary containing story information with the following required fields:
-                - url: str
-                - title: str
-                - full_text: str
-                Optional fields:
-                - customer_name: str (filled in by LLM extraction)
-                - publication_date: str
-                - customer_location: str
-                - customer_industry: str
-                - persona_title: str
-                - use_case: str
-                - benefits: List[str]
-                - technologies: List[str]
-                - partners: List[str]
-                - company_id: int
-        
+            story_data: Dictionary containing story data with the following keys:
+                - url: URL of the case study
+                - publication_date: Publication date in YYYY-MM-DD format
+                - full_text: Full text content
+                - customer_name: Name of the customer
+                - customer_city: City of the customer
+                - customer_country: Country of the customer
+                - customer_industry: Industry of the customer
+                - persona_name: Name of the main persona
+                - persona_designation: Designation of the main persona
+                - use_case: Main use case
+                - benefits: List of benefits
+                - benefit_tags: List of benefit tags
+                - technologies: List of technologies
+                - partners: List of partners
+                
         Returns:
-            Optional[int]: The ID of the created case study if successful, None otherwise
+            ID of the processed case study if successful, None otherwise
         """
         try:
-            # Validate required fields (customer_name is now optional, filled by LLM)
-            required_fields = ['url', 'title', 'full_text']
-            missing_fields = [field for field in required_fields if not story_data.get(field)]
-            if missing_fields:
-                raise ValueError(f"Missing required fields: {', '.join(missing_fields)}")
+            # Add the case study to the database
+            case_study_id = self.db.add_case_study(
+                url=story_data.get('url'),
+                customer_name=story_data.get('customer_name'),
+                customer_city=story_data.get('customer_city'),
+                customer_country=story_data.get('customer_country'),
+                customer_industry=story_data.get('customer_industry'),
+                persona_name=story_data.get('persona_name'),
+                persona_designation=story_data.get('persona_designation'),
+                use_case=story_data.get('use_case'),
+                benefits=story_data.get('benefits', []),
+                benefit_tags=story_data.get('benefit_tags', []),
+                technologies=story_data.get('technologies', []),
+                partners=story_data.get('partners', [])
+            )
 
-            # Check if URL already exists
-            if self.db.is_url_scraped(story_data['url']):
-                self.logger.info(f"URL already processed: {story_data['url']}")
-                return None
-
-            # Extract data with consistent defaults
-            url = story_data['url']
-            title = story_data['title']
-            publication_date = story_data.get('publication_date', '')
-            full_text = story_data['full_text']
-            customer_name = story_data.get('customer_name', '')  # Now optional, filled by LLM
-            
-            # Optional fields with consistent defaults
-            customer_location = story_data.get('customer_location', '')
-            customer_industry = story_data.get('customer_industry', '')
-            persona_title = story_data.get('persona_title', 'AI/ML Engineer')
-            use_case = story_data.get('use_case', 'AI/ML Model Training')
-            benefits = story_data.get('benefits', [])
-            technologies = story_data.get('technologies', [])
-            partners = story_data.get('partners', [])
-            company_id = story_data.get('company_id', 1)
-
-            # Generate embedding consistently
-            try:
-                embedding = self.llm_interface.generate_embedding(full_text)
-            except Exception as e:
-                self.logger.error(f"Failed to generate embedding: {str(e)}")
-                return None
-
-            # Add story to database consistently
-            try:
-                case_study_id = self.db.add_case_study(
-                    url=url,
-                    title=title,
-                    publication_date=publication_date,
-                    full_text=full_text,
-                    customer_name=customer_name,
-                    customer_location=customer_location,
-                    customer_industry=customer_industry,
-                    persona_title=persona_title,
-                    use_case=use_case,
-                    benefits=benefits,
-                    technologies=technologies,
-                    partners=partners,
-                    company_id=company_id,
-                    embedding=embedding
-                )
-                self.logger.info(f"Successfully processed story: {title} (ID: {case_study_id})")
-                return case_study_id
-            except Exception as e:
-                self.logger.error(f"Failed to add case study to database: {str(e)}")
-                return None
-
+            return case_study_id
         except Exception as e:
             self.logger.error(f"Error processing story: {str(e)}")
             return None
@@ -324,63 +295,43 @@ class StoryProcessor:
 
     def extract_title(self, text: str) -> str:
         """Extract the title from the text."""
-        prompt = f"""Extract the main title or headline from this text:
-
-{text}
-
-Title:"""
-        response, stats = self._call_llm(prompt)
-        return response.strip()
+        return self.local_llm.extract_title(text)
 
     def extract_customer_name(self, text: str) -> str:
         """Extract the customer name from the text."""
-        prompt = f"""Extract the name of the customer or company being featured in this case study:
-
-{text}
-
-Customer name:"""
-        response, stats = self._call_llm(prompt)
-        return response.strip()
+        return self.local_llm.extract_customer_name(text)
 
     def extract_customer_location(self, text: str) -> str:
         """Extract the customer's location from the text."""
-        prompt = f"""Extract the location (city, country) of the customer or company being featured:
-
-{text}
-
-Location:"""
-        response, stats = self._call_llm(prompt)
-        return response.strip()
+        return self.local_llm.extract_customer_location(text)
 
     def extract_customer_industry(self, text: str) -> str:
         """Extract the customer's industry from the text."""
-        prompt = f"""Extract the industry or sector of the customer or company being featured:
-
-{text}
-
-Industry:"""
-        response, stats = self._call_llm(prompt)
-        return response.strip()
+        return self.local_llm.extract_customer_industry(text)
 
     def extract_persona_title(self, text: str) -> str:
         """Extract the persona title from the text."""
-        prompt = f"""Extract the job title of the main contact or decision maker mentioned in this case study:
-
-{text}
-
-Persona title:"""
-        response, stats = self._call_llm(prompt)
-        return response.strip()
+        return self.local_llm.extract_persona_title(text)
 
     def categorize_use_case(self, text: str) -> str:
         """Categorize the use case from the text."""
-        prompt = f"""Categorize the main use case or application described in this case study:
+        return self.local_llm.categorize_use_case(text)
 
-{text}
+    def extract_tags(self, text: str) -> List[str]:
+        """Extract relevant tags from the text."""
+        return self.local_llm.extract_tags(text)
 
-Use case:"""
-        response, stats = self._call_llm(prompt)
-        return response.strip()
+    def extract_benefits(self, text: str) -> List[str]:
+        """Extract benefits from the text."""
+        return self.local_llm.extract_benefits(text)
+
+    def extract_technologies(self, text: str) -> List[str]:
+        """Extract technologies from the text."""
+        return self.local_llm.extract_technologies(text)
+
+    def extract_partners(self, text: str) -> List[str]:
+        """Extract partners from the text."""
+        return self.local_llm.extract_partners(text)
 
     def rate_insight_score(self, text: str) -> float:
         """Rate the insight score from 1-5."""
@@ -400,16 +351,6 @@ Score (1-5):"""
             return max(1.0, min(5.0, score))
         except ValueError:
             return 3.0
-
-    def extract_tags(self, text: str) -> List[str]:
-        """Extract relevant tags from the text."""
-        prompt = f"""Extract 3-5 relevant tags that describe this case study:
-
-{text}
-
-Tags (one per line):"""
-        response, stats = self._call_llm(prompt)
-        return [tag.strip() for tag in response.split('\n') if tag.strip()]
 
     def _call_llm(self, prompt: str) -> Tuple[str, Dict[str, Any]]:
         """Make a call to the LLM and handle any errors."""
