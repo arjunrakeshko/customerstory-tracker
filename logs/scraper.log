@@ -1,0 +1,237 @@
+2025-05-10 00:25:15,522 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:25:15,522 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:25:17,114 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:25:19,066 - scraper - INFO - Saved raw HTML to data/html/13c86f6e68eb.html
+2025-05-10 00:25:20,594 - scraper - INFO - Saved raw HTML to data/html/5fd4aafaaa17.html
+2025-05-10 00:25:22,182 - scraper - INFO - Saved raw HTML to data/html/63891b30b32f.html
+2025-05-10 00:25:23,699 - scraper - INFO - Saved raw HTML to data/html/163044e5aaf2.html
+2025-05-10 00:25:25,325 - scraper - INFO - Saved raw HTML to data/html/61ea7282573a.html
+2025-05-10 00:25:26,771 - scraper - INFO - Saved raw HTML to data/html/b967a8f56071.html
+2025-05-10 00:35:09,377 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:35:09,378 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:35:10,905 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:35:12,207 - scraper - INFO - Saved raw HTML to data/html/13c86f6e68eb.html
+2025-05-10 00:35:14,531 - scraper - INFO - Saved raw HTML to data/html/5fd4aafaaa17.html
+2025-05-10 00:35:16,092 - scraper - INFO - Saved raw HTML to data/html/63891b30b32f.html
+2025-05-10 00:37:16,414 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:37:16,415 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:37:17,985 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:37:19,457 - scraper - INFO - Saved raw HTML to data/html/13c86f6e68eb.html
+2025-05-10 00:37:21,768 - scraper - INFO - Saved raw HTML to data/html/5fd4aafaaa17.html
+2025-05-10 00:37:23,358 - scraper - INFO - Saved raw HTML to data/html/63891b30b32f.html
+2025-05-10 00:37:24,927 - scraper - INFO - Saved raw HTML to data/html/163044e5aaf2.html
+2025-05-10 00:38:55,598 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:38:55,599 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:38:57,043 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:38:57,063 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:38:57,064 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:38:57,065 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:38:58,386 - scraper - INFO - Saved raw HTML to data/html/163044e5aaf2.html
+2025-05-10 00:39:00,802 - scraper - INFO - Saved raw HTML to data/html/61ea7282573a.html
+2025-05-10 00:39:02,687 - scraper - INFO - Saved raw HTML to data/html/b967a8f56071.html
+2025-05-10 00:39:04,653 - scraper - INFO - Saved raw HTML to data/html/0e1fec1af446.html
+2025-05-10 00:39:07,639 - scraper - INFO - Saved raw HTML to data/html/2d3dc3b2fefb.html
+2025-05-10 00:39:09,361 - scraper - INFO - Saved raw HTML to data/html/455e941cd788.html
+2025-05-10 00:39:12,086 - scraper - INFO - Saved raw HTML to data/html/a7add6143d9e.html
+2025-05-10 00:39:13,849 - scraper - INFO - Saved raw HTML to data/html/d69240132f0d.html
+2025-05-10 00:39:16,086 - scraper - INFO - Saved raw HTML to data/html/2a035088a0cb.html
+2025-05-10 00:39:18,013 - scraper - INFO - Saved raw HTML to data/html/35cc7921c4d2.html
+2025-05-10 00:39:19,704 - scraper - INFO - Saved raw HTML to data/html/ef57f0cc206e.html
+2025-05-10 00:39:22,806 - scraper - INFO - Saved raw HTML to data/html/fbf837391545.html
+2025-05-10 00:39:23,473 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 00:39:24,803 - scraper - INFO - Saved raw HTML to data/html/3ce1b0a15ad5.html
+2025-05-10 00:39:24,825 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:39:24,826 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:39:24,826 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:39:24,827 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:39:24,827 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:39:24,828 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:39:24,828 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:39:24,829 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:39:24,829 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:39:24,830 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:39:24,830 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:39:24,831 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:39:24,831 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:39:24,833 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:39:24,834 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:42:30,170 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:42:30,172 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:42:31,733 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:42:31,761 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:42:31,762 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:42:31,763 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:42:31,763 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:42:31,764 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:42:31,765 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:42:31,766 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:42:31,766 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:42:31,767 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:42:31,769 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:42:31,770 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:42:31,771 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:42:31,772 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:42:31,773 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:42:31,774 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:42:31,776 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 00:42:33,040 - scraper - INFO - Saved raw HTML to data/html/3ce1b0a15ad5.html
+2025-05-10 00:42:33,053 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:42:33,054 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:42:33,054 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:42:33,055 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:42:33,055 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:42:33,055 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:42:33,056 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:42:33,056 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:42:33,057 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:42:33,057 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:42:33,058 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:42:33,058 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:42:33,058 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:42:33,059 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:42:33,059 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:42:33,060 - scraper - INFO - Found 0 stories for Cerebras
+2025-05-10 00:42:33,061 - scraper - INFO - Scraping Lambda AI using subdirectory_crawl strategy
+2025-05-10 00:42:33,061 - scraper - INFO - Crawling: https://lambda.ai/case-studies
+2025-05-10 00:42:34,298 - scraper - INFO - Saved raw HTML to data/html/22a19c0b2b6c.html
+2025-05-10 00:42:35,462 - scraper - INFO - Saved raw HTML to data/html/885c8929529f.html
+2025-05-10 00:42:36,696 - scraper - INFO - Saved raw HTML to data/html/b527fe171ad7.html
+2025-05-10 00:42:37,867 - scraper - INFO - Saved raw HTML to data/html/6ff565b9c230.html
+2025-05-10 00:42:39,068 - scraper - INFO - Saved raw HTML to data/html/a99f90e02627.html
+2025-05-10 00:42:40,212 - scraper - INFO - Saved raw HTML to data/html/1b83c9af88e7.html
+2025-05-10 00:42:40,242 - scraper - INFO - Found 0 stories for Lambda AI
+2025-05-10 00:43:44,114 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:43:44,114 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:43:45,636 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:43:45,652 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:43:45,653 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:43:45,654 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:43:45,654 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:43:45,655 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:43:45,656 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:43:45,656 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:43:45,657 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:43:45,657 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:43:45,658 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:43:45,658 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:43:45,659 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:43:45,659 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:43:45,660 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:43:45,660 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:43:45,661 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 00:43:46,989 - scraper - INFO - Saved raw HTML to data/html/3ce1b0a15ad5.html
+2025-05-10 00:43:47,010 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:43:47,012 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:43:47,012 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:43:47,013 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:43:47,014 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:43:47,016 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:43:47,016 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:43:47,017 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:43:47,018 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:43:47,018 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:43:47,019 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:43:47,020 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:43:47,020 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:43:47,021 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:43:47,022 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:43:47,022 - scraper - INFO - Found 0 stories for Cerebras
+2025-05-10 00:43:47,025 - scraper - INFO - Scraping Lambda AI using subdirectory_crawl strategy
+2025-05-10 00:43:47,025 - scraper - INFO - Crawling: https://lambda.ai/case-studies
+2025-05-10 00:43:48,183 - scraper - INFO - Saved raw HTML to data/html/22a19c0b2b6c.html
+2025-05-10 00:43:49,287 - scraper - INFO - Saved raw HTML to data/html/885c8929529f.html
+2025-05-10 00:43:50,404 - scraper - INFO - Saved raw HTML to data/html/b527fe171ad7.html
+2025-05-10 00:43:51,532 - scraper - INFO - Saved raw HTML to data/html/6ff565b9c230.html
+2025-05-10 00:43:52,681 - scraper - INFO - Saved raw HTML to data/html/a99f90e02627.html
+2025-05-10 00:43:53,776 - scraper - INFO - Saved raw HTML to data/html/1b83c9af88e7.html
+2025-05-10 00:43:53,824 - scraper - INFO - Found 0 stories for Lambda AI
+2025-05-10 00:44:22,133 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:44:22,135 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:44:23,570 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:44:23,612 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:44:23,613 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:44:23,615 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:44:23,616 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:44:23,616 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:44:23,617 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:44:23,618 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:44:23,619 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:44:23,620 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:44:23,621 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:44:23,622 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:44:23,622 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:44:23,622 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:44:23,623 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:44:23,624 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:44:23,625 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 00:44:25,072 - scraper - INFO - Saved raw HTML to data/html/3ce1b0a15ad5.html
+2025-05-10 00:44:25,090 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:44:25,090 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:44:25,091 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:44:25,092 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:44:25,092 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:44:25,093 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:44:25,093 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:44:25,094 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:44:25,095 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:44:25,095 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:44:25,096 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:44:25,096 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:44:25,097 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:44:25,098 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:44:25,099 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:44:25,099 - scraper - INFO - Found 0 stories for Cerebras
+2025-05-10 00:44:25,101 - scraper - INFO - Scraping Lambda AI using subdirectory_crawl strategy
+2025-05-10 00:44:25,101 - scraper - INFO - Crawling: https://lambda.ai/case-studies
+2025-05-10 00:44:26,241 - scraper - INFO - Saved raw HTML to data/html/22a19c0b2b6c.html
+2025-05-10 00:44:27,341 - scraper - INFO - Saved raw HTML to data/html/885c8929529f.html
+2025-05-10 00:44:28,608 - scraper - INFO - Saved raw HTML to data/html/b527fe171ad7.html
+2025-05-10 00:44:29,714 - scraper - INFO - Saved raw HTML to data/html/6ff565b9c230.html
+2025-05-10 00:44:30,882 - scraper - INFO - Saved raw HTML to data/html/a99f90e02627.html
+2025-05-10 00:44:32,007 - scraper - INFO - Saved raw HTML to data/html/1b83c9af88e7.html
+2025-05-10 00:44:32,060 - scraper - INFO - Found 0 stories for Lambda AI
+2025-05-10 00:47:18,204 - scraper - INFO - Scraping Cerebras using subdirectory_crawl strategy
+2025-05-10 00:47:18,206 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights
+2025-05-10 00:47:19,587 - scraper - INFO - Saved raw HTML to data/html/935128472516.html
+2025-05-10 00:47:19,607 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:47:19,608 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:47:19,609 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:47:19,609 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:47:19,610 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:47:19,610 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:47:19,611 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:47:19,612 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:47:19,612 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:47:19,613 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:47:19,613 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:47:19,614 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:47:19,614 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:47:19,615 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:47:19,616 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:47:19,617 - scraper - INFO - Crawling: https://www.cerebras.ai/customer-spotlights#main-content
+2025-05-10 00:47:20,911 - scraper - INFO - Saved raw HTML to data/html/3ce1b0a15ad5.html
+2025-05-10 00:47:20,926 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/alphasense - already scraped
+2025-05-10 00:47:20,927 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/mayo-clinic - already scraped
+2025-05-10 00:47:20,928 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/totalenergies - already scraped
+2025-05-10 00:47:20,928 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/leibniz-supercomputing-centre - already scraped
+2025-05-10 00:47:20,929 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/psc - already scraped
+2025-05-10 00:47:20,929 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/epcc - already scraped
+2025-05-10 00:47:20,930 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/lawrence-livermore-national-laboratory - already scraped
+2025-05-10 00:47:20,930 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/astrazeneca - already scraped
+2025-05-10 00:47:20,931 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-energy-technology-laboratory - already scraped
+2025-05-10 00:47:20,931 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-center-for-supercomputing-applications - already scraped
+2025-05-10 00:47:20,932 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/aleph-alpha - already scraped
+2025-05-10 00:47:20,933 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/national-laboratories - already scraped
+2025-05-10 00:47:20,933 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/nference - already scraped
+2025-05-10 00:47:20,934 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/argonne-national-laboratory - already scraped
+2025-05-10 00:47:20,934 - scraper - INFO - Skipping https://www.cerebras.ai/customer-spotlights/glaxosmithkline - already scraped
+2025-05-10 00:47:20,934 - scraper - INFO - Found 0 stories for Cerebras
+2025-05-10 00:47:20,936 - scraper - INFO - Scraping Lambda AI using subdirectory_crawl strategy
+2025-05-10 00:47:20,936 - scraper - INFO - Crawling: https://lambda.ai/case-studies
+2025-05-10 00:47:22,087 - scraper - INFO - Saved raw HTML to data/html/22a19c0b2b6c.html
+2025-05-10 00:47:23,191 - scraper - INFO - Saved raw HTML to data/html/885c8929529f.html
+2025-05-10 00:47:24,297 - scraper - INFO - Saved raw HTML to data/html/b527fe171ad7.html
+2025-05-10 00:47:25,413 - scraper - INFO - Saved raw HTML to data/html/6ff565b9c230.html
+2025-05-10 00:47:26,565 - scraper - INFO - Saved raw HTML to data/html/a99f90e02627.html
+2025-05-10 00:47:27,656 - scraper - INFO - Saved raw HTML to data/html/1b83c9af88e7.html
+2025-05-10 00:47:27,708 - scraper - INFO - Found 0 stories for Lambda AI

@@ -1,0 +1,68 @@
+2025-05-10 00:24:38,824 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:24:38,828 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:24:38,830 - database - INFO - Executing schema script
+2025-05-10 00:24:38,867 - database - INFO - Schema execution completed
+2025-05-10 00:25:15,505 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:25:15,506 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:25:15,511 - database - INFO - Executing schema script
+2025-05-10 00:25:15,513 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:25:15,521 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:25:15,521 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:25:15,522 - database - INFO - Executing schema script
+2025-05-10 00:25:15,522 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:35:09,359 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:35:09,359 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:35:09,362 - database - INFO - Executing schema script
+2025-05-10 00:35:09,365 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:35:09,375 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:35:09,376 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:35:09,376 - database - INFO - Executing schema script
+2025-05-10 00:35:09,376 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:37:16,400 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:37:16,401 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:37:16,403 - database - INFO - Executing schema script
+2025-05-10 00:37:16,405 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:37:16,413 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:37:16,413 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:37:16,414 - database - INFO - Executing schema script
+2025-05-10 00:37:16,414 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:38:55,585 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:38:55,586 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:38:55,590 - database - INFO - Executing schema script
+2025-05-10 00:38:55,593 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:38:55,596 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:38:55,596 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:38:55,597 - database - INFO - Executing schema script
+2025-05-10 00:38:55,598 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:42:30,157 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:42:30,158 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:42:30,162 - database - INFO - Executing schema script
+2025-05-10 00:42:30,165 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:42:30,169 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:42:30,169 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:42:30,169 - database - INFO - Executing schema script
+2025-05-10 00:42:30,170 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:43:44,106 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:43:44,107 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:43:44,109 - database - INFO - Executing schema script
+2025-05-10 00:43:44,111 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:43:44,113 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:43:44,113 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:43:44,113 - database - INFO - Executing schema script
+2025-05-10 00:43:44,113 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:44:22,122 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:44:22,123 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:44:22,125 - database - INFO - Executing schema script
+2025-05-10 00:44:22,128 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:44:22,132 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:44:22,132 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:44:22,132 - database - INFO - Executing schema script
+2025-05-10 00:44:22,133 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:47:18,190 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:47:18,192 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:47:18,195 - database - INFO - Executing schema script
+2025-05-10 00:47:18,198 - database - WARNING - Table already exists: table companies already exists
+2025-05-10 00:47:18,202 - database - INFO - Loading schema from /Users/arjunrakesh/Documents/GitHub/layoftheland/customerstory-tracker/schema.sql
+2025-05-10 00:47:18,203 - database - INFO - Initializing database at data/customer_stories.db
+2025-05-10 00:47:18,203 - database - INFO - Executing schema script
+2025-05-10 00:47:18,204 - database - WARNING - Table already exists: table companies already exists

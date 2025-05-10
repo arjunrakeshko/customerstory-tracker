@@ -1,176 +1,81 @@
-# Customer Story Tracker
+# Customer Story Processing System
 
-A tool for scraping, processing, and analyzing customer success stories and case studies. The system can use either a local LLM (Mistral via Ollama) or OpenAI's GPT-4o-mini API for processing stories.
+A system for processing and analyzing customer success stories from HTML files, extracting key information, and storing it in a structured database.
 
-## Features
+## Main Components
 
-- Scrapes customer stories from configured sources
-- Processes stories to extract key information:
-  - Title and publication date
-  - Customer name, location, and industry
-  - Use case categorization
-  - Key benefits and metrics
-  - Technologies and partners mentioned
-  - Insight score (1-5)
-  - Thematic tags
-- Stores data in SQLite database
-- Generates insights and analytics
-- Supports both local LLM and OpenAI API processing
+- `main.py` - Main script to process HTML files
+- `processor.py` - Core processing logic for stories
+- `database.py` - Database operations and schema management
+- `schema.sql` - Database schema definition
+- `scraper.py` - HTML content extraction and processing
 
 ## Prerequisites
 
 - Python 3.8+
-- For local LLM: [Ollama](https://ollama.ai/) installed with Mistral model
-- For OpenAI: Valid OpenAI API key
+- Required packages:
+  ```bash
+  pip install beautifulsoup4 schedule
+  ```
 
-## Installation
+## Directory Structure
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd customerstory-tracker
+```
+.
+├── data/
+│   ├── html/           # Place HTML files here
+│   └── customer_stories.db  # SQLite database
+├── main.py
+├── processor.py
+├── database.py
+├── scraper.py
+└── schema.sql
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+## How to Run
 
-3. Set up the local LLM (optional, if using OpenAI API):
-```bash
-# Install Ollama
-curl https://ollama.ai/install.sh | sh
+1. Place your HTML customer story files in the `data/html/` directory
 
-# Pull and run Mistral model
-ollama pull mistral
-ollama run mistral
-```
+2. Run the processing script:
+   ```bash
+   python main.py
+   ```
 
-## Configuration
+3. The script will:
+   - Process each HTML file
+   - Extract key information using LLM-based extraction
+   - Store data in SQLite database
+   - Log processing results
 
-1. Create a `targets.yaml` file with your target websites:
-```yaml
-websites:
-  - name: "Example Corp"
-    url: "https://example.com/case-studies"
-    selectors:
-      story_container: ".case-study"
-      title: "h1"
-      content: ".content"
-```
+## What Gets Processed
 
-2. (Optional) Set OpenAI API key as environment variable:
-```bash
-export OPENAI_API_KEY="your-api-key-here"
-```
+For each customer story, the system extracts:
+- Basic information (title, date)
+- Customer details (name, country, industry)
+- Benefits achieved
+- Technologies used
+- Implementation partners
+- Use case and persona information
 
-## Usage
+## Database Output
 
-### Interactive Mode (Default)
+The processed data is stored in a SQLite database (`data/customer_stories.db`) with the following main tables:
+- `case_studies` - Main story information
+- `benefits` - Extracted benefits
+- `technologies` - Used technologies
+- `partners` - Implementation partners
+- `use_cases` - Categorized use cases
+- `personas` - Target user personas
 
-Run the script without arguments to use interactive mode:
-```bash
-python main.py
-```
+## Logging
 
-This will:
-1. Prompt you to choose between Local LLM and OpenAI API
-2. If using OpenAI:
-   - Ask for your API key (or use environment variable)
-   - Let you set a token limit (default: 100,000)
-3. Process stories and show progress
-4. Generate insights and save them to `data/insights/`
+The system logs processing information to the console, including:
+- Number of files processed
+- Success/failure status
+- Any errors encountered
 
-### Non-Interactive Mode
+## Error Handling
 
-Run with command-line arguments:
-```bash
-# Use local LLM
-python main.py --non-interactive
-
-# Use OpenAI API with custom token limit
-python main.py --use-openai --token-limit 50000 --non-interactive
-
-# Specify custom database path
-python main.py --db-path custom/path/stories.db
-```
-
-### Command Line Options
-
-- `--use-openai`: Use OpenAI API instead of local LLM
-- `--non-interactive`: Run without prompts
-- `--token-limit`: Set token limit for OpenAI API (default: 100,000)
-- `--db-path`: Specify custom database path (default: data/customer_stories.db)
-
-## Output
-
-The system generates:
-1. SQLite database with processed stories
-2. JSON insights file in `data/insights/` with:
-   - Story leaderboard
-   - Publishing cadence
-   - Geographic distribution
-   - Industry distribution
-   - Tag distribution
-   - Average insight scores
-
-## Cost Management (OpenAI API)
-
-When using OpenAI API:
-- Token usage is tracked and limited
-- Cost estimates are provided
-- Progress shows remaining tokens
-- Final summary includes:
-  - Total tokens used
-  - Input/output token breakdown
-  - Estimated cost
-  - Remaining tokens
-
-## Database Management
-
-The system uses SQLite for data storage. The database file is located at `data/customer_stories.db` by default.
-
-### Database Files
-- `data/customer_stories.db`: Main database file
-- If a `customer_stories_new.db` file exists and the main database is empty, the system will automatically use the new database file.
-
-### Database Configuration
-You can specify a custom database path using the `--db-path` argument:
-```bash
-python main.py --db-path /path/to/your/database.db
-```
-
-### Data Directory Structure
-```
-data/
-├── customer_stories.db    # Main database file
-├── html/                  # Cached HTML content
-└── insights/             # Generated insights reports
-```
-
-## Development and Debugging Tools
-
-The `tools/` directory contains utility scripts for development, testing, and debugging:
-
-### Available Tools
-- `test_openai.py`: Test OpenAI API connection and configuration
-- `setup_local_llm.py`: Set up and configure local LLM service
-- `query_stories.py`: Query and display customer stories from database
-
-For more details about these tools, see [tools/README.md](tools/README.md).
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-[Your chosen license]
-
-## Support
-
-For issues and feature requests, please use the GitHub issue tracker. 
+- Invalid HTML files are logged but don't stop processing
+- Database errors are caught and logged
+- Processing continues even if individual files fail 
