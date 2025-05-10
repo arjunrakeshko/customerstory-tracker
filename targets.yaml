@@ -1,0 +1,48 @@
+# - name: OpenAI
+#   base_url: https://openai.com/index/
+#   type: subdirectory_crawl
+#   rate_limit:
+#     requests_per_minute: 30
+#     delay_between_requests: 2
+
+- name: Cerebras
+  base_url: https://www.cerebras.ai/customer-spotlights
+  type: subdirectory_crawl
+  rate_limit:
+    requests_per_minute: 30
+    delay_between_requests: 2
+
+# - name: Anthropic
+#   base_url: https://www.anthropic.com/customers
+#   type: subdirectory_crawl
+#   rate_limit:
+#     requests_per_minute: 30
+#     delay_between_requests: 2
+
+# - name: Microsoft
+#   base_url: https://www.microsoft.com/en/customers/story
+#   type: subdirectory_crawl
+#   rate_limit:
+#     requests_per_minute: 20
+#     delay_between_requests: 3
+
+# - name: Google Cloud
+#   base_url: https://cloud.google.com/customers
+#   type: subdirectory_crawl
+#   rate_limit:
+#     requests_per_minute: 25
+#     delay_between_requests: 2.5
+
+- name: Lambda AI
+  base_url: https://lambda.ai/case-studies
+  type: subdirectory_crawl
+  rate_limit:
+    requests_per_minute: 30
+    delay_between_requests: 2
+
+# - name: Together AI
+#   base_url: https://www.together.ai/solutions#customer-stories
+#   type: inline_section
+#   rate_limit:
+#     requests_per_minute: 25
+#     delay_between_requests: 2.5
